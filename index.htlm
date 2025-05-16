@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi Landing Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      text-align: center;
+    }
+    header {
+      background: #2b6cb0;
+      color: white;
+      padding: 2em 1em;
+    }
+    main {
+      padding: 2em;
+    }
+    a.boton {
+      background: #3182ce;
+      color: white;
+      padding: 1em 2em;
+      text-decoration: none;
+      border-radius: 8px;
+      display: inline-block;
+      margin-top: 1em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Bienvenido a mi Landing Page</h1>
+    <p>Esta es una página de presentación simple.</p>
+  </header>
+  <main>
+    <h2>Algo atractivo aquí</h2>
+    <p>Texto breve que describe tu producto, servicio o perfil.</p>
+    <a class="boton" href="https://tusitio.com">¡Empieza ahora!</a>
+  </main>
+</body>
+</html><!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi Landing Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      text-align: center;
+    }
+    header {
+      background: #2b6cb0;
+      color: white;
+      padding: 2em 1em;
+    }
+    main {
+      padding: 2em;
+    }
+    a.boton {
+      background: #3182ce;
+      color: white;
+      padding: 1em 2em;
+      text-decoration: none;
+      border-radius: 8px;
+      display: inline-block;
+      margin-top: 1em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Bienvenido a mi Landing Page</h1>
+    <p>Esta es una página de presentación simple.</p>
+  </header>
+  <main>
+    <h2>Algo atractivo aquí</h2>
+    <p>Texto breve que describe tu producto, servicio o perfil.</p>
+    <a class="boton" href="https://tusitio.com">¡Empieza ahora!</a>
+  </main>
+</body>
+</html>
