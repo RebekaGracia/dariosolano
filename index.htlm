@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tarjeta de Presentación</title>
+  <title>Dr. Dario E. Solano Rojas</title>
   <style>
     body {
       margin: 0;
@@ -38,7 +38,7 @@
       font-size: 1em;
       margin-bottom: 1em;
     }
-    .bio {
+    .objgral {
       font-size: 0.95em;
       color: #333;
       margin-bottom: 1.5em;
@@ -61,16 +61,26 @@
 </head>
 <body>
   <div class="card">
-    <img src="https://via.placeholder.com/120" alt="Foto de perfil" />
-    <h1>Nombre Apellido</h1>
-    <div class="degree">Licenciatura en X / Ingeniero en Y</div>
-    <div class="bio">
-      Soy una persona apasionada por [tu área]. Me especializo en [breve especialidad] y busco oportunidades para contribuir con proyectos innovadores.
+    <img src="https://github.com/RebekaGracia/dario-solano/blob/main/dario_solano2.jpeg" alt="Foto de perfil"/>
+    <h1>Dr. Darío E. Solano Rojas</h1>
+    <div class="degree">Profesor de tiempo completo</div>
+    <p>Departamento de Ingeniería Geológica</p>
+    <p>División de Ingeniería en Ciencias de la Tierra</p>
+    <p>Facultad de Ingeniería, UNAM</p>
+    <div class="objgral">
+    <h2>Objetivo general:</h2> 
+    <p>Contribuir al fortalecimiento de la planta académica de la Facultad de Ingeniería, UNAM, a través de actividades de docencia, formación de recursos humanos, investigación y vinculación.</p>
+    <h2>Objetivos específicos:</h2>
+    <ul>
+    <li> En mis actividades como docente, continuar mi labor dentro de un esquema de mejora continua para la enseñanza de materias de Geoestadística, Modelación Numérica en la Ingeniería Geológica, Sistemas de Información Geográfica, etc., aprovechando mi formación académica con una fuerte componente de principios estadísticos, matemáticos, computacionales y de modelación aplicados a las Geociencias. Para tal fin, continuaré con mi participación en proyectos y trabajos de titulación que procuren la generación de materiales didácticos digitales e impresos. </li> 
+    <li> En mis actividades de apoyo a la formación de recursos humanos, continuar, evaluar, y mejorar continuamente mis labores de tutoría, como responsable de programas de servicio social, y de dirección de trabajos de obtención de grado a nivel licenciatura y posgrado. </li> 
+    <li> En mis actividades de investigación, continuar mis labores de dirección de proyectos académicos institucionales y externos, así como de publicación de artículos científicos utilizando las habilidades adquiridas durante mi formación doctoral y aplicadas durante mi labor de investigación actual, la cual está respaldada por publicaciones científicas en revistas de renombre del área de las Geociencias.</li> 
+    </ul>
     </div>
     <div class="contact-info">
-      <p><strong>Tel:</strong> +52 123 456 7890</p>
-      <p><strong>Email:</strong> <a href="mailto:correo@ejemplo.com">correo@ejemplo.com</a></p>
-      <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/usuario" target="_blank">linkedin.com/in/usuario</a></p>
+      <p><strong>Tel:</strong> +52 777 18 58 731</p>
+      <p><strong>Email:</strong> <a href="mailto:dsolano@unam.mx">dsolano@unam.mx</a></p>
+      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/darioesr/" target="_blank">linkedin.com/in/darioesr/</a></p>
     </div>
   </div>
 </body>
