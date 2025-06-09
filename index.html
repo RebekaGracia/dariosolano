@@ -9,92 +9,176 @@
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background: #f0f2f5;
+    }
+
+    nav {
+      background-color: #2b6cb0;
+      padding: 1em;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1em;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
       display: flex;
       justify-content: center;
-      align-items: center;
       padding: 2em;
-      min-height: 100vh;
     }
+
     .card {
       background: white;
       border-radius: 16px;
       padding: 2em;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      max-width: 600px;
+      max-width: 800px;
       width: 100%;
     }
+
     .card img {
       width: 120px;
       height: 120px;
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 1em;
       display: block;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto 1em auto;
     }
+
     h1, h2 {
       text-align: center;
       margin: 0.5em 0;
     }
-    .degree, .department, .division, .faculty {
+
+    .info {
       text-align: center;
       color: #555;
-      margin: 0.2em 0;
     }
+
     .section {
-      margin-top: 1.5em;
+      display: none;
     }
+
+    .section.active {
+      display: block;
+    }
+
     .section ul {
       padding-left: 1.2em;
     }
+
     .contact-info {
-      margin-top: 1.5em;
       font-size: 0.95em;
     }
+
     .contact-info p {
       margin: 0.3em 0;
     }
+
     a {
       color: #2b6cb0;
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <img src="dario_solano2.jpeg" alt="Foto de perfil"/>
-    <h1>Dr. Darío E. Solano Rojas</h1>
-    <div class="degree">Profesor de tiempo completo</div>
-    <div class="department">Departamento de Ingeniería Geológica</div>
-    <div class="division">División de Ingeniería en Ciencias de la Tierra</div>
-    <div class="faculty">Facultad de Ingeniería, UNAM</div>
 
-    <div class="section">
-      <h2>Objetivo general:</h2>
-      <p>Contribuir al fortalecimiento de la planta académica de la Facultad de Ingeniería, UNAM, a través de actividades de docencia, formación de recursos humanos, investigación y vinculación.</p>
-    </div>
+  <!-- Navegación -->
+  <nav>
+    <a onclick="showSection('semblanza')">Semblanza</a>
+    <a onclick="showSection('soluciones')">Soluciones</a>
+    <a onclick="showSection('tecnologias')">Tecnologías Aplicadas</a>
+    <a onclick="showSection('publicaciones')">Publicaciones y Artículos</a>
+    <a onclick="showSection('news')">IN NEWS</a>
+    <a onclick="showSection('contacto')">Contacto</a>
+  </nav>
 
-    <div class="section">
-      <h2>Objetivos específicos:</h2>
-      <ul>
-        <li>Continuar mi labor como docente en mejora continua en materias de Geoestadística, Modelación Numérica y Sistemas de Información Geográfica.</li>
-        <li>Apoyar la formación de recursos humanos a través de tutorías, dirección de tesis y servicio social.</li>
-        <li>Impulsar proyectos de investigación y publicación científica en el área de Geociencias.</li>
-      </ul>
-    </div>
+  <div class="container">
+    <div class="card">
 
-    <div class="contact-info">
-      <p><strong>Tel:</strong> +52 777 18 58 731</p>
-      <p><strong>Email:</strong> <a href="mailto:dsolano@unam.mx">dsolano@unam.mx</a></p>
-      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/darioesr/" target="_blank">linkedin.com/in/darioesr</a></p>
-      <p><strong>ResearchGate:</strong> <a href="https://www.researchgate.net/profile/Dario-Solano-Rojas" target="_blank">researchgate.net/profile/Dario-Solano-Rojas</a></p>
-      <p><strong>X:</strong> <a href="https://x.com/Mr_InSAR" target="_blank">x.com/Mr_InSAR</a></p>
-      <p><strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?user=qrffwRYAAAAJ&hl=es" target="_blank">scholar.google.com/citations?user=qrffwRYAAAAJ&hl=es</a></p>
+      <!-- Semblanza -->
+      <div id="semblanza" class="section active">
+        <img src="dario_solano2.jpeg" alt="Foto de perfil"/>
+        <h1>Dr. Darío E. Solano Rojas</h1>
+        <div class="info">Profesor de tiempo completo</div>
+        <div class="info">Departamento de Ingeniería Geológica</div>
+        <div class="info">División de Ingeniería en Ciencias de la Tierra</div>
+        <div class="info">Facultad de Ingeniería, UNAM</div>
+
+        <div class="section">
+          <h2>Objetivo general:</h2>
+          <p>Contribuir al fortalecimiento de la planta académica de la Facultad de Ingeniería, UNAM, a través de actividades de docencia, formación de recursos humanos, investigación y vinculación.</p>
+        </div>
+
+        <div class="section">
+          <h2>Objetivos específicos:</h2>
+          <ul>
+            <li>Docencia en Geoestadística, Modelación Numérica y SIG.</li>
+            <li>Tutorías, tesis y servicio social.</li>
+            <li>Proyectos de investigación en Geociencias.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Soluciones -->
+      <div id="soluciones" class="section">
+        <h2>Soluciones</h2>
+        <p>Contenido sobre soluciones propuestas, casos de éxito o metodologías aplicadas.</p>
+      </div>
+
+      <!-- Tecnologías aplicadas -->
+      <div id="tecnologias" class="section">
+        <h2>Tecnologías Aplicadas</h2>
+        <p>Listado de tecnologías, herramientas y software utilizados en investigaciones y consultorías.</p>
+      </div>
+
+      <!-- Publicaciones -->
+      <div id="publicaciones" class="section">
+        <h2>Publicaciones y Artículos</h2>
+        <p>Aquí puedes listar tus publicaciones académicas y artículos destacados con enlaces.</p>
+      </div>
+
+      <!-- In News -->
+      <div id="news" class="section">
+        <h2>IN NEWS</h2>
+        <p>Sección para apariciones en medios, entrevistas o noticias relevantes.</p>
+      </div>
+
+      <!-- Contacto -->
+      <div id="contacto" class="section contact-info">
+        <h2>Contacto</h2>
+        <p><strong>Tel:</strong> +52 777 18 58 731</p>
+        <p><strong>Email:</strong> <a href="mailto:dsolano@unam.mx">dsolano@unam.mx</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/darioesr/" target="_blank">linkedin.com/in/darioesr</a></p>
+        <p><strong>ResearchGate:</strong> <a href="https://www.researchgate.net/profile/Dario-Solano-Rojas" target="_blank">researchgate.net/profile/Dario-Solano-Rojas</a></p>
+        <p><strong>X:</strong> <a href="https://x.com/Mr_InSAR" target="_blank">x.com/Mr_InSAR</a></p>
+        <p><strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?user=qrffwRYAAAAJ&hl=es" target="_blank">Google Scholar</a></p>
+      </div>
+
     </div>
   </div>
+
+  <script>
+    function showSection(id) {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+
 </body>
 </html>
