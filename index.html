@@ -140,7 +140,23 @@
   margin-right: 0.5em;
   color: #cd171e;
 }
+.escudo {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100px;
+  height: auto;
+  z-index: 1;
+  opacity: 0.9;
+}
 
+.escudo-izquierdo {
+  left: 20px;
+}
+
+.escudo-derecho {
+  right: 20px;
+}
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-r6LvzOv0xyoE8W2iR7HtbGM8lR7U9T3PNXhvSOq0fHtDRZgHiHhcdbefY0w6E2c1aT1O5iC27I8lgKuvn65V8A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -157,8 +173,9 @@
     <a onclick="showSection('news')">IN NEWS</a>
     <a onclick="showSection('contacto')">CONTACTO</a>
   </nav>
-
-  <div class="container">
+  <!-- Escudos FI y UNAM -->
+<img src="img/escudo-izquierdo.png" alt="Escudo izquierdo" class="escudo escudo-izquierdo">
+<img src="img/escudo-derecho.png" alt="Escudo derecho" class="escudo escudo-derecho">  <div class="container">
     <div class="card">
 
       <!-- Inicio -->
