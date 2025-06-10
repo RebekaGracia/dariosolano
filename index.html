@@ -102,35 +102,42 @@ body {
     align-items: center;
     margin-top: 1.5em;
   }
+    .perfil-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  align-items: flex-start;
+  margin-top: 1.5em;
+}
 
-  .perfil-img img {
-    width: 200px;
-    height: 200px;
-    border-radius: 16px;
-    object-fit: cover;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  }
+.perfil-img img {
+  width: 200px;
+  height: 200px;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
 
-  .perfil-info {
-    flex: 1;
-    min-width: 250px;
+.perfil-info {
+  flex: 1;
+  min-width: 250px;
+}
+
+.perfil-info p {
+  text-align: justify;
+  margin-top: 1em;
+}
+
+@media (max-width: 768px) {
+  .perfil-flex {
+    flex-direction: column;
+    text-align: center;
   }
 
   .perfil-info p {
     text-align: justify;
-    margin-top: 1em;
   }
-
-  @media (max-width: 768px) {
-    .perfil-flex {
-      flex-direction: column;
-      text-align: center;
-    }
-
-    .perfil-info p {
-      text-align: justify;
-    }
-  }
+}
   </style>
 </head>
 <body>
@@ -155,33 +162,40 @@ body {
   <h1>DARÍO E. SOLANO ROJAS</h1>
   <h2>INGENIERO GEÓLOGO ESPECIALIZADO EN MONITOREO DE INFRAESTRUCTURA Y GESTIÓN DEL RIESGO</h2>
 
+  <div class="perfil-flex">
+    <div class="perfil-img">
+      <img src="dario_solano2.jpeg" alt="Foto de perfil" />
+    </div>
 
-  <img src="dario_solano2.jpeg" alt="Foto de perfil"/>
-  <div class="info">Profesor de tiempo completo</div>
-  <div class="info">Departamento de Ingeniería Geológica</div>
-  <div class="info">División de Ingeniería en Ciencias de la Tierra</div>
-  <div class="info">Facultad de Ingeniería, UNAM</div>
+    <div class="perfil-info">
+      <div class="info">Profesor de tiempo completo</div>
+      <div class="info">Departamento de Ingeniería Geológica</div>
+      <div class="info">División de Ingeniería en Ciencias de la Tierra</div>
+      <div class="info">Facultad de Ingeniería, UNAM</div>
 
-  <p style="text-align: justify; margin-top: 1em;">
-    Soy ingeniero con una sólida formación académica y amplia experiencia en el análisis y monitoreo de infraestructura urbana mediante tecnologías satelitales y geoespaciales. A lo largo de mi carrera me he enfocado en aplicar herramientas avanzadas para comprender y mitigar los efectos de fenómenos como la subsidencia del terreno, especialmente en contextos urbanos complejos como la Ciudad de México.
-  </p>
-  <p style="text-align: justify;">
-    Mi trabajo se centra en transformar datos en conocimiento útil para la toma de decisiones estratégicas en la gestión del territorio, los recursos hídricos y la seguridad estructural.
-  </p>  
+      <p>
+        Soy ingeniero con una sólida formación académica y amplia experiencia en el análisis y monitoreo de infraestructura urbana mediante tecnologías satelitales y geoespaciales. A lo largo de mi carrera me he enfocado en aplicar herramientas avanzadas para comprender y mitigar los efectos de fenómenos como la subsidencia del terreno, especialmente en contextos urbanos complejos como la Ciudad de México.
+      </p>
+      <p>
+        Mi trabajo se centra en transformar datos en conocimiento útil para la toma de decisiones estratégicas en la gestión del territorio, los recursos hídricos y la seguridad estructural.
+      </p>
+    </div>
+  </div>
+
   <h2>ESPECIALIZACIÓN TÉCNICA</h2>
-<p>Mi experiencia se basa en la integración de tecnologías satelitales, geofísicas y aerofotogramétricas en los siguientes campos clave:</p>
-<ul>
-  <li>Monitoreo de infraestructura con tecnología InSAR</li>
-  <li>Análisis de subsidencia del terreno en zonas urbanas, con enfoque en la CDMX</li>
-  <li>Desarrollo de estrategias de gestión del agua basadas en datos satelitales</li>
-  <li>Evaluación del daño a infraestructura provocado por subsidencia</li>
-  <li>Análisis de riesgos geológicos asociados a fallas superficiales</li>
-  <li>Evaluación del riesgo geotécnico y estructural urbano</li>
-  <li>Análisis de subsidencia diferencial con tecnologías satelitales y geofísicas avanzadas</li>
-  <li>Consultoría en gestión de recursos hídricos y planificación territorial</li>
-  <li>Zonificación de riesgo geológico para infraestructura crítica</li>
-  <li>Fotogrametría con drones aplicada al análisis estructural</li>
-</ul> 
+  <p>Mi experiencia se basa en la integración de tecnologías satelitales, geofísicas y aerofotogramétricas en los siguientes campos clave:</p>
+  <ul>
+    <li>Monitoreo de infraestructura con tecnología InSAR</li>
+    <li>Análisis de subsidencia del terreno en zonas urbanas, con enfoque en la CDMX</li>
+    <li>Desarrollo de estrategias de gestión del agua basadas en datos satelitales</li>
+    <li>Evaluación del daño a infraestructura provocado por subsidencia</li>
+    <li>Análisis de riesgos geológicos asociados a fallas superficiales</li>
+    <li>Evaluación del riesgo geotécnico y estructural urbano</li>
+    <li>Análisis de subsidencia diferencial con tecnologías satelitales y geofísicas avanzadas</li>
+    <li>Consultoría en gestión de recursos hídricos y planificación territorial</li>
+    <li>Zonificación de riesgo geológico para infraestructura crítica</li>
+    <li>Fotogrametría con drones aplicada al análisis estructural</li>
+  </ul>
 </div>
 
       <!-- Soluciones -->
