@@ -141,26 +141,30 @@
   color: #cd171e;
 }
 .container {
-  position: relative; /* Necesario para posicionar escudos dentro */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 2em;
 }
 
 .escudo {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 140px;
+  width: 150px;
   height: auto;
   opacity: 0.95;
 }
 
 .escudo-izquierdo {
-  left: -160px;
+  left: 0;
+  transform: translate(-100%, -50%); /* Se aleja a la izquierda del card */
 }
 
 .escudo-derecho {
-  right: -160px;
+  right: 0;
+  transform: translate(100%, -50%); /* Se aleja a la derecha del card */
 }
-
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-r6LvzOv0xyoE8W2iR7HtbGM8lR7U9T3PNXhvSOq0fHtDRZgHiHhcdbefY0w6E2c1aT1O5iC27I8lgKuvn65V8A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
