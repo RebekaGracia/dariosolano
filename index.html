@@ -14,15 +14,19 @@
     
 nav {
   background-color: #b1d4f7;
-  padding: 0.5em 1em;
-  text-align: center;
   position: sticky;
   top: 0;
   z-index: 999;
+  height: 70px; /* define una altura concreta */
 }
 
 .nav-container {
-  height: 100%;
+  max-width: 800px; /* o el mismo ancho que tu .card o .container */
+  margin: 0 auto;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .nav-links-wrapper {
   display: flex;
@@ -39,11 +43,12 @@ nav {
   justify-content: center;
   flex-wrap: wrap;
   gap: 1em;
+  flex: 1;
 }
 
 .nav-logo {
   height: 100%;
-  max-height: 60px; /* Ajusta según tu barra */
+  max-height: 70px;
   object-fit: contain;
 }
 .nav-links a {
@@ -189,21 +194,18 @@ nav {
   
 <nav>
   <div class="nav-container">
-    <div class="nav-links-wrapper">
-      <img src="logo_unam.png" class="nav-logo" alt="UNAM" />
-      <div class="nav-links">
-        <a onclick="showSection('inicio')">INICIO</a>
-        <a onclick="showSection('soluciones')">SOLUCIONES</a>
-        <a onclick="showSection('tecnologias')">TECNOLOGÍAS APLICADAS</a>
-        <a onclick="showSection('publicaciones')">PUBLICACIONES</a>
-        <a onclick="showSection('news')">IN NEWS</a>
-        <a onclick="showSection('contacto')">CONTACTO</a>
-      </div>
-      <img src="logo_ingenieria.png" class="nav-logo" alt="FI" />
+    <img src="logo_unam.png" class="nav-logo" alt="UNAM" />
+    <div class="nav-links">
+      <a onclick="showSection('inicio')">INICIO</a>
+      <a onclick="showSection('soluciones')">SOLUCIONES</a>
+      <a onclick="showSection('tecnologias')">TECNOLOGÍAS APLICADAS</a>
+      <a onclick="showSection('publicaciones')">PUBLICACIONES</a>
+      <a onclick="showSection('news')">IN NEWS</a>
+      <a onclick="showSection('contacto')">CONTACTO</a>
     </div>
+    <img src="logo_ingenieria.png" class="nav-logo" alt="FI" />
   </div>
 </nav>
-
 
 
 
