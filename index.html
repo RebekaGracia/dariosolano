@@ -6,48 +6,35 @@
   <title>Dr. Dario E. Solano Rojas</title>
   <style>
     
-  body {
+ body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background: #ffffff;
-    }
-    
+}
+
+/* Navegación */
+.nav-wrapper {
+  width: 100%;
+  background-color: #b1d4f7;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
 .nav-container {
-  max-width: 800px; /* igual a .card */
+  max-width: 800px;
   margin: 0 auto;
   height: 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: sticky;
-  top: 0;
-  z-index: 999;
 }
-.nav-bar-wrapper {
-  background-color: #b1d4f7;
-}
+
 .nav-logo-wrapper {
-  flex: 0 0 60px; /* espacio fijo para logos */
+  flex: 0 0 60px;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.nav-links-wrapper {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-.nav-wrapper {
-  background-color: #b1d4f7;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-}
-
-.nav-links {
-  display: flex;
-  gap: 1em;
 }
 
 .nav-logo {
@@ -56,6 +43,19 @@
   object-fit: contain;
   display: block;
 }
+
+.nav-links-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+}
+
 .nav-links a {
   white-space: nowrap;
   color: white;
@@ -67,12 +67,13 @@
 .nav-links a:hover {
   text-decoration: underline;
 }
+
 .nav-links a.active {
   text-decoration: underline;
   color: #003366;
 }
 
-
+/* Contenedor principal */
 .container {
   margin-top: 10px; 
   position: relative;
@@ -81,72 +82,74 @@
   padding: 2em;
 }
 
+/* Tarjeta principal */
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 2em;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  width: 100%;
+}
 
+.card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 1em auto;
+}
 
-    .card {
-      background: white;
-      border-radius: 16px;
-      padding: 2em;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      max-width: 800px;
-      width: 100%;
-    }
+h1, h2 {
+  text-align: center;
+  margin: 0.5em 0;
+}
 
-    .card img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      display: block;
-      margin: 0 auto 1em auto;
-    }
+.info {
+  text-align: center;
+  color: #555;
+}
 
-    h1, h2 {
-      text-align: center;
-      margin: 0.5em 0;
-    }
+/* Secciones */
+.section {
+  display: none;
+}
 
-    .info {
-      text-align: center;
-      color: #555;
-    }
+.section.active {
+  display: block;
+}
 
-    .section {
-      display: none;
-    }
+.section ul {
+  padding-left: 1.2em;
+}
 
-    .section.active {
-      display: block;
-    }
+/* Información de contacto */
+.contact-info {
+  font-size: 0.95em;
+}
 
-    .section ul {
-      padding-left: 1.2em;
-    }
+.contact-info p {
+  margin: 0.3em 0;
+}
 
-    .contact-info {
-      font-size: 0.95em;
-    }
+.contact-info i {
+  margin-right: 0.5em;
+  color: #cd171e;
+}
 
-    .contact-info p {
-      margin: 0.3em 0;
-    }
+/* Enlaces generales */
+a {
+  color: #2b6cb0;
+  text-decoration: none;
+}
 
-    a {
-      color: #2b6cb0;
-      text-decoration: none;
-    }
+a:hover {
+  text-decoration: underline;
+}
 
-    a:hover {
-      text-decoration: underline;
-    }
-    .perfil-flex {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2em;
-    align-items: center;
-    margin-top: 1.5em;
-  }
-    .perfil-flex {
+/* Perfil */
+.perfil-flex {
   display: flex;
   flex-wrap: wrap;
   gap: 2em;
@@ -172,6 +175,7 @@
   margin-top: 1em;
 }
 
+/* Responsive */
 @media (max-width: 768px) {
   .perfil-flex {
     flex-direction: column;
@@ -181,18 +185,21 @@
   .perfil-info p {
     text-align: justify;
   }
-}
-    .contact-info i {
-  margin-right: 0.5em;
-  color: #cd171e;
-}
 
-@media (max-width: 768px) {
   .nav-links-wrapper {
     flex-direction: column;
   }
+
+  .nav-container {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 1em 0;
+  }
+
+  .nav-links {
+    margin-top: 0.5em;
+  }
 }  
-  
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
@@ -202,22 +209,26 @@
   <!-- Navegación -->
   
 <!-- Navegación -->
-<div class="nav-bar-wrapper">
+  
+<div class="nav-wrapper">
   <div class="nav-container">
-    <div class="nav-logo-wrapper left">
+    <div class="nav-logo-wrapper">
       <img src="logo_unam.png" class="nav-logo" alt="UNAM" />
     </div>
-
     <div class="nav-links-wrapper">
       <div class="nav-links">
-        <a onclick="showSection('inicio')">INICIO</a>
-        <a onclick="showSection('soluciones')">SOLUCIONES</a>
-        <a onclick="showSection('tecnologias')">TECNOLOGÍAS APLICADAS</a>
-        <a onclick="showSection('publicaciones')">PUBLICACIONES</a>
-        <a onclick="showSection('news')">IN NEWS</a>
-        <a onclick="showSection('contacto')">CONTACTO</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#soluciones">Soluciones</a>
+        <a href="#tecnologia">Tecnología</a>
+        <a href="#publicaciones">Publicaciones</a>
       </div>
     </div>
+    <div class="nav-logo-wrapper">
+      <img src="logo_ingenieria.png" class="nav-logo" alt="FI UNAM" />
+    </div>
+  </div>
+</div>
+
 
     <div class="nav-logo-wrapper right">
       <img src="logo_ingenieria.png" class="nav-logo" alt="FI" />
