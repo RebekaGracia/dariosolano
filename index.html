@@ -11,25 +11,42 @@
   font-family: 'Segoe UI', sans-serif;
   background: #ffffff;
     }
-
-
+    
     nav {
-      background-color: #cd171e;
-      padding: 1em;
-      text-align: center;
-    }
+  background-color: #cd171e;
+  padding: 0.5em 1em;
+}
 
-    nav a {
-      color: white;
-      margin: 0 1em;
-      text-decoration: none;
-      font-weight: bold;
-      cursor: pointer;
-    }
+.nav-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
 
-    nav a:hover {
-      text-decoration: underline;
-    }
+.nav-logo {
+  height: 50px;
+  object-fit: contain;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-grow: 1;
+  gap: 1em;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
 
     .container {
       display: flex;
@@ -140,30 +157,8 @@
   margin-right: 0.5em;
   color: #cd171e;
 }
-.container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  padding: 2em;
-}
 
-.escudo {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 150px;
-  height: auto;
-  opacity: 0.95;
-}
 
-.escudo-izquierdo {
-  left: 10px;
-  transform: translateY(-50%);
-}
-.escudo-derecho {
-  right: 10px;
-  transform: translateY(-50%);
-}
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
@@ -172,21 +167,25 @@
 
   <!-- Navegación -->
   
-  <nav>
-    <a onclick="showSection('inicio')">INICIO</a>
-    <a onclick="showSection('soluciones')">SOLUCIONES</a>
-    <a onclick="showSection('tecnologias')">TECNOLOGÍAS APLICADAS</a>
-    <a onclick="showSection('publicaciones')">PUBLICACIONES Y ARTÍCULOS</a>
-    <a onclick="showSection('news')">IN NEWS</a>
-    <a onclick="showSection('contacto')">CONTACTO</a>
-  </nav>
+<nav>
+  <div class="nav-content">
+    <img src="logo_unam.png" alt="Escudo UNAM" class="nav-logo">
+    <div class="nav-links">
+      <a onclick="showSection('inicio')">INICIO</a>
+      <a onclick="showSection('soluciones')">SOLUCIONES</a>
+      <a onclick="showSection('tecnologias')">TECNOLOGÍAS APLICADAS</a>
+      <a onclick="showSection('publicaciones')">PUBLICACIONES Y ARTÍCULOS</a>
+      <a onclick="showSection('news')">IN NEWS</a>
+      <a onclick="showSection('contacto')">CONTACTO</a>
+    </div>
+    <img src="logo_ingenieria.png" alt="Escudo FI" class="nav-logo">
+  </div>
+</nav>
+
 
   
   <div class="container">
-      <!-- Escudos FI y UNAM -->
-<img src="escudofi.jpg" alt="Escudo izquierdo" class="escudo escudo-izquierdo">
-<img src="UNAM_logo.jpg" alt="Escudo derecho" class="escudo escudo-derecho">
-    
+
     <div class="card">
 
       <!-- Inicio -->
