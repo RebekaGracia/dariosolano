@@ -13,27 +13,31 @@
     }
     
 .nav-container {
+  max-width: 800px; /* igual a .card */
+  margin: 0 auto;
   height: 70px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
-  padding: 0 1em;
-  max-width: 1000px;
-  margin: 0 auto;
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
-
-    .nav-logo-wrapper {
-  flex: 0 0 auto;
+.nav-bar-wrapper {
+  background-color: #b1d4f7;
+}
+.nav-logo-wrapper {
+  flex: 0 0 60px; /* espacio fijo para logos */
   display: flex;
   align-items: center;
-}
-
-.nav-links-wrapper {
-  flex: 1 1 auto;
-  display: flex;
   justify-content: center;
 }
 
+.nav-links-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
 .nav-wrapper {
   background-color: #b1d4f7;
   position: sticky;
@@ -43,7 +47,6 @@
 
 .nav-links {
   display: flex;
-  flex-wrap: nowrap;
   gap: 1em;
 }
 
@@ -53,7 +56,6 @@
   object-fit: contain;
   display: block;
 }
-
 .nav-links a {
   white-space: nowrap;
   color: white;
@@ -199,9 +201,10 @@
 
   <!-- Navegación -->
   
-<div class="nav-wrapper">
+<!-- Navegación -->
+<div class="nav-bar-wrapper">
   <div class="nav-container">
-    <div class="nav-logo-wrapper">
+    <div class="nav-logo-wrapper left">
       <img src="logo_unam.png" class="nav-logo" alt="UNAM" />
     </div>
 
@@ -216,11 +219,12 @@
       </div>
     </div>
 
-    <div class="nav-logo-wrapper">
+    <div class="nav-logo-wrapper right">
       <img src="logo_ingenieria.png" class="nav-logo" alt="FI" />
     </div>
   </div>
 </div>
+
 
   
   <div class="container">
