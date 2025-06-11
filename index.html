@@ -14,49 +14,55 @@
     
 nav {
   background-color: #b1d4f7;
-  min-height: 20px;
+  height: 50px; 
   display: flex;
   align-items: center;
-  justify-content: center;
-  position: fixed;        /* <- Esto la fija en la parte superior */
-  top: 0;                 /* <- Pegada al borde superior */
+  justify-content: space-between; /* separa escudos y links */
+  position: fixed;
+  top: 0;
   left: 0;
-  width: 100%;            /* <- Ocupa todo el ancho */
-  z-index: 1000;          /* <- Se asegura de estar por encima del contenido */
+  width: 100%;
+  padding: 0 1em;
+  z-index: 1000;
 }
-    
+
+/* Envoltorio de los enlaces */
 .nav-links {
   display: flex;
   align-items: center;
   gap: 1em;
-  flex-wrap: wrap;
+  height: 100%;
 }
 
+/* Escudos */
 .nav-logo {
-  height: 80%;
-  max-height: 80%;
+  height: 40px;  
   object-fit: contain;
 }
 
-
+/* Estilos de los enlaces */
 .nav-links a {
   color: #4f5050;
   text-decoration: none;
   font-weight: bold;
-  cursor: pointer;
+  padding: 0 0.4em;
+  line-height: 50px; 
+  font-size: 0.9em;
 }
 
 .nav-links a:hover {
   text-decoration: underline;
 }
 
+/* Contenido principal */
 .container {
-  margin-top: 100px; /* ajusta según la altura real del nav */
+  margin-top: 60px; 
   position: relative;
   display: flex;
   justify-content: center;
   padding: 2em;
 }
+
 
 
     .card {
@@ -173,18 +179,16 @@ nav {
   <!-- Navegación -->
   
 <nav>
+  <img src="escudo-izquierdo.png" class="nav-logo" alt="Izquierdo" />
   <div class="nav-links">
-    <img src="logo_unam.png" alt="Escudo FI" class="nav-logo">
-    
     <a onclick="showSection('inicio')">INICIO</a>
     <a onclick="showSection('soluciones')">SOLUCIONES</a>
     <a onclick="showSection('tecnologias')">TECNOLOGÍAS APLICADAS</a>
-    <a onclick="showSection('publicaciones')">PUBLICACIONES Y ARTÍCULOS</a>
+    <a onclick="showSection('publicaciones')">PUBLICACIONES</a>
     <a onclick="showSection('news')">IN NEWS</a>
     <a onclick="showSection('contacto')">CONTACTO</a>
-    
-    <img src="logo_ingenieria.png" alt="Escudo UNAM" class="nav-logo">
   </div>
+  <img src="escudo-derecho.png" class="nav-logo" alt="Derecho" />
 </nav>
 
 
