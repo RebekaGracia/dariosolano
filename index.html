@@ -13,11 +13,7 @@
     }
     
 .nav-container {
-  background-color: #b1d4f7;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  height: 70px; /* define una altura concreta */
+  height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -25,6 +21,7 @@
   max-width: 1000px;
   margin: 0 auto;
 }
+
     .nav-logo-wrapper {
   flex: 0 0 auto;
   display: flex;
@@ -37,6 +34,12 @@
   justify-content: center;
 }
 
+.nav-wrapper {
+  background-color: #b1d4f7;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
 
 .nav-links {
   display: flex;
@@ -196,24 +199,26 @@
 
   <!-- Navegación -->
   
-<div class="nav-container">
-  <div class="nav-logo-wrapper">
-    <img src="logo_unam.png" class="nav-logo" alt="UNAM" />
-  </div>
-
-  <div class="nav-links-wrapper">
-    <div class="nav-links">
-      <a onclick="showSection('inicio')">INICIO</a>
-      <a onclick="showSection('soluciones')">SOLUCIONES</a>
-      <a onclick="showSection('tecnologias')">TECNOLOGÍAS APLICADAS</a>
-      <a onclick="showSection('publicaciones')">PUBLICACIONES</a>
-      <a onclick="showSection('news')">IN NEWS</a>
-      <a onclick="showSection('contacto')">CONTACTO</a>
+<div class="nav-wrapper">
+  <div class="nav-container">
+    <div class="nav-logo-wrapper">
+      <img src="logo_unam.png" class="nav-logo" alt="UNAM" />
     </div>
-  </div>
 
-  <div class="nav-logo-wrapper">
-    <img src="logo_ingenieria.png" class="nav-logo" alt="FI" />
+    <div class="nav-links-wrapper">
+      <div class="nav-links">
+        <a onclick="showSection('inicio')">INICIO</a>
+        <a onclick="showSection('soluciones')">SOLUCIONES</a>
+        <a onclick="showSection('tecnologias')">TECNOLOGÍAS APLICADAS</a>
+        <a onclick="showSection('publicaciones')">PUBLICACIONES</a>
+        <a onclick="showSection('news')">IN NEWS</a>
+        <a onclick="showSection('contacto')">CONTACTO</a>
+      </div>
+    </div>
+
+    <div class="nav-logo-wrapper">
+      <img src="logo_ingenieria.png" class="nav-logo" alt="FI" />
+    </div>
   </div>
 </div>
 
