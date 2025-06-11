@@ -11,23 +11,23 @@
     background: #ffffff;
   }
 
-  .nav-bar-wrapper {
-    background-color: #b1d4f7;
-    position: sticky;
-    top: 0;
-    z-index: 999;
-  }
+.nav-bar-wrapper {
+  background-color: #b1d4f7;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 1em;
+}
 
-  .nav-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1em;
-    flex-wrap: wrap;
-  }
+.nav-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
 
   .nav-logo-wrapper {
     display: flex;
@@ -225,33 +225,32 @@
   
 <!-- Navegación -->
 <div class="nav-bar-wrapper">
+
+  <!-- Logo UNAM fuera del contenedor central -->
+  <div class="nav-logo-wrapper left">
+    <img src="logo_unam.png" class="nav-logo" alt="UNAM" />
+  </div>
+
+  <!-- Contenedor central solo con enlaces -->
   <div class="nav-container">
-
-    <!-- Logo UNAM -->
-    <div class="nav-logo-wrapper left">
-      <img src="logo_unam.png" class="nav-logo" alt="UNAM" />
-    </div>
-
-    <!-- Enlaces -->
     <div class="nav-links-center">
       <div class="nav-links">
         <a onclick="showSection('inicio')">INICIO</a>
         <a onclick="showSection('soluciones')">SOLUCIONES</a>
-        <a onclick="showSection('tecnologias')">TECNOLOGÍAS APLICADAS</a>
+        <a onclick="showSection('tecnologias')">TECNOL. APLICADAS</a>
         <a onclick="showSection('publicaciones')">PUBLICACIONES</a>
         <a onclick="showSection('news')">IN NEWS</a>
         <a onclick="showSection('contacto')">CONTACTO</a>
       </div>
     </div>
-
-    <!-- Logo Ingeniería -->
-    <div class="nav-logo-wrapper right">
-      <img src="logo_ingenieria.png" class="nav-logo" alt="FI" />
-    </div>
-
   </div>
-</div>
 
+  <!-- Logo Ingeniería fuera del contenedor central -->
+  <div class="nav-logo-wrapper right">
+    <img src="logo_ingenieria.png" class="nav-logo" alt="FI" />
+  </div>
+
+</div>
 
   
   <div class="container">
