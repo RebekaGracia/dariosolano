@@ -12,16 +12,10 @@
   background: #ffffff;
     }
     
-nav {
-  background-color: #b1d4f7;
-  padding: 0.5em 1em;
-  text-align: center;
-}
-
-.nav-links {
+.nav-container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap;
   gap: 1em;
 }
@@ -31,16 +25,14 @@ nav {
   object-fit: contain;
 }
 
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  cursor: pointer;
+.nav-links {
+  display: flex;
+  gap: 1em;
+  flex-grow: 1;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.nav-links a:hover {
-  text-decoration: underline;
-}
 
 .container {
   margin-top: 60px; 
@@ -166,17 +158,20 @@ nav {
   <!-- Navegación -->
   
 <nav>
-  <img src="logo_unam.png" class="nav-logo" alt="UNAM" />
-  <div class="nav-links">
-    <a onclick="showSection('inicio')">INICIO</a>
-    <a onclick="showSection('soluciones')">SOLUCIONES</a>
-    <a onclick="showSection('tecnologias')">TECNOLOGÍAS APLICADAS</a>
-    <a onclick="showSection('publicaciones')">PUBLICACIONES</a>
-    <a onclick="showSection('news')">IN NEWS</a>
-    <a onclick="showSection('contacto')">CONTACTO</a>
+  <div class="nav-container">
+    <img src="logo_unam.png" class="nav-logo" alt="UNAM" />
+    <div class="nav-links">
+      <a onclick="showSection('inicio')">INICIO</a>
+      <a onclick="showSection('soluciones')">SOLUCIONES</a>
+      <a onclick="showSection('tecnologias')">TECNOLOGÍAS APLICADAS</a>
+      <a onclick="showSection('publicaciones')">PUBLICACIONES</a>
+      <a onclick="showSection('news')">IN NEWS</a>
+      <a onclick="showSection('contacto')">CONTACTO</a>
+    </div>
+    <img src="logo_ingenieria.png" class="nav-logo" alt="FI" />
   </div>
-  <img src="logo_ingenieria.png" class="nav-logo" alt="FI" />
 </nav>
+
 
 
   
