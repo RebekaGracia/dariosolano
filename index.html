@@ -21,43 +21,42 @@ nav {
 }
 
 .nav-container {
-  max-width: 1200px; /* aumentamos el ancho máximo */
-  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
   padding: 0 1em;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+    .nav-logo-wrapper {
+  flex: 0 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  height: 100%;
-  flex-wrap: wrap; /* permite que los elementos bajen si no caben */
 }
 
 .nav-links-wrapper {
+  flex: 1 1 auto;
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 1em;
-  flex-wrap: wrap;
 }
 
 
 .nav-links {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 1em;
-  flex: 1;
 }
 
 .nav-logo {
-  height: auto;
-  max-height: 70px;
+  max-height: 50px;
   width: auto;
   object-fit: contain;
   display: block;
 }
 
 .nav-links a {
+  white-space: nowrap;
   color: white;
   text-decoration: none;
   font-weight: bold;
@@ -201,9 +200,12 @@ nav {
 
   <!-- Navegación -->
   
-<nav>
-  <div class="nav-container">
+<div class="nav-container">
+  <div class="nav-logo-wrapper">
     <img src="logo_unam.png" class="nav-logo" alt="UNAM" />
+  </div>
+
+  <div class="nav-links-wrapper">
     <div class="nav-links">
       <a onclick="showSection('inicio')">INICIO</a>
       <a onclick="showSection('soluciones')">SOLUCIONES</a>
@@ -212,11 +214,12 @@ nav {
       <a onclick="showSection('news')">IN NEWS</a>
       <a onclick="showSection('contacto')">CONTACTO</a>
     </div>
+  </div>
+
+  <div class="nav-logo-wrapper">
     <img src="logo_ingenieria.png" class="nav-logo" alt="FI" />
   </div>
-</nav>
-
-
+</div>
 
   
   <div class="container">
