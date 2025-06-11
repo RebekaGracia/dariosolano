@@ -14,12 +14,12 @@
     
 nav {
   background-color: #b1d4f7;
-  padding: 0.5em 1em;
+  height: 60px; /* altura estándar de una barra */
+  padding: 0 1em;
 }
 
 .nav-container {
-  padding: 0.5em 1em;
-  background-color: #b1d4f7;
+  height: 100%;
 }
 .nav-links-wrapper {
   display: flex;
@@ -39,7 +39,8 @@ nav {
 }
 
 .nav-logo {
-  height: 40px;
+  height: 100%;
+  max-height: 60px; /* Ajusta según tu barra */
   object-fit: contain;
 }
 .nav-links a {
