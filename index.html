@@ -13,11 +13,16 @@
     }
     
 nav {
-  background-color: #b1d4f7;
-  min-height: 50px; /* o height: 80px; si prefieres altura fija */
+  background-color: #cd171e;
+  min-height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: fixed;        /* <- Esto la fija en la parte superior */
+  top: 0;                 /* <- Pegada al borde superior */
+  left: 0;
+  width: 100%;            /* <- Ocupa todo el ancho */
+  z-index: 1000;          /* <- Se asegura de estar por encima del contenido */
 }
     
 .nav-links {
@@ -45,11 +50,14 @@ nav {
   text-decoration: underline;
 }
 
-    .container {
-      display: flex;
-      justify-content: center;
-      padding: 2em;
-    }
+.container {
+  margin-top: 100px; /* ajusta según la altura real del nav */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 2em;
+}
+
 
     .card {
       background: white;
