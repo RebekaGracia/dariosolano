@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dr. Dario E. Solano Rojas</title>
-  <style>
+ <style>
   body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
@@ -20,25 +20,35 @@
 
   .nav-container {
     width: 100%;
-    height: 70px;
-    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1em;
+    flex-wrap: wrap;
+  }
+
+  .nav-logo-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex: 0 0 auto;
   }
 
   .nav-links-center {
-    max-width: 800px;
-    margin: 0 auto;
-    height: 100%;
+    flex: 1 1 auto;
     display: flex;
-    align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+    min-width: 200px;
   }
 
   .nav-links {
     display: flex;
     gap: 1em;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .nav-links a {
@@ -63,20 +73,6 @@
     width: auto;
     object-fit: contain;
     display: block;
-  }
-
-  .nav-logo-wrapper.left {
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  .nav-logo-wrapper.right {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
   }
 
   .container {
@@ -181,12 +177,18 @@
       flex-direction: column;
       height: auto;
       padding: 1em 0;
+      gap: 1em;
+    }
+
+    .nav-logo-wrapper {
+      width: 100%;
+      justify-content: center;
     }
 
     .nav-links-center {
-      order: 2;
       width: 100%;
-      margin: 1em 0;
+      justify-content: center;
+      order: 2;
     }
 
     .nav-links {
@@ -195,20 +197,12 @@
       align-items: center;
     }
 
-    .nav-logo-wrapper.left,
-    .nav-logo-wrapper.right {
-      position: static;
-      transform: none;
-    }
-
     .nav-logo-wrapper.left {
       order: 1;
-      margin-bottom: 1em;
     }
 
     .nav-logo-wrapper.right {
       order: 3;
-      margin-top: 1em;
     }
 
     .perfil-flex {
@@ -222,6 +216,7 @@
   }
 </style>
 
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
 </head>
@@ -231,13 +226,13 @@
 <!-- Navegación -->
 <div class="nav-bar-wrapper">
   <div class="nav-container">
-    
-    <!-- Logo izquierdo -->
+
+    <!-- Logo UNAM -->
     <div class="nav-logo-wrapper left">
       <img src="logo_unam.png" class="nav-logo" alt="UNAM" />
     </div>
 
-    <!-- Enlaces centrados en 800px -->
+    <!-- Enlaces -->
     <div class="nav-links-center">
       <div class="nav-links">
         <a onclick="showSection('inicio')">INICIO</a>
@@ -249,14 +244,13 @@
       </div>
     </div>
 
-    <!-- Logo derecho -->
+    <!-- Logo Ingeniería -->
     <div class="nav-logo-wrapper right">
       <img src="logo_ingenieria.png" class="nav-logo" alt="FI" />
     </div>
 
   </div>
 </div>
-
 
 
   
