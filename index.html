@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dr. Dario E. Solano Rojas</title>
  <style>
-  body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: #ffffff;
-  }
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #ffffff;
+}
 
 .nav-bar-wrapper {
   background-color: #b1d4f7;
@@ -17,181 +17,195 @@
   top: 0;
   z-index: 999;
   display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 0 1em;
+  justify-content: center;
+  padding: 0.5em 0;
+}
+
+.nav-logos-mobile {
+  display: none; /* solo para móvil */
 }
 
 .nav-container {
-  flex: 1;
+  width: 100%;
+  height: 70px;
+  position: relative;
   display: flex;
+  align-items: center;
   justify-content: center;
 }
 
-  .nav-logo-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 0 0 auto;
-  }
+.nav-links-center {
+  max-width: 800px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
 
-  .nav-links-center {
-    flex: 1 1 auto;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    min-width: 200px;
-  }
+.nav-links-center a {
+  white-space: nowrap;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
 
-  .nav-links {
-    display: flex;
-    gap: 1em;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+.nav-links-center a:hover {
+  text-decoration: underline;
+}
 
-  .nav-links a {
-    white-space: nowrap;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    cursor: pointer;
-  }
+.nav-links-center a.active {
+  text-decoration: underline;
+  color: #003366;
+}
 
-  .nav-links a:hover {
-    text-decoration: underline;
-  }
+.nav-logo {
+  max-height: 50px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
 
-  .nav-links a.active {
-    text-decoration: underline;
-    color: #003366;
-  }
+.nav-logo-wrapper.left {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
 
-  .nav-logo {
-    max-height: 50px;
-    width: auto;
-    object-fit: contain;
-    display: block;
-  }
+.nav-logo-wrapper.right {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
 
-  .container {
-    margin-top: 10px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    padding: 2em;
-  }
+.container {
+  margin-top: 10px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 2em;
+}
 
-  .card {
-    background: white;
-    border-radius: 16px;
-    padding: 2em;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
-    width: 100%;
-  }
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 2em;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  width: 100%;
+}
 
-  .card img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    display: block;
-    margin: 0 auto 1em auto;
-  }
+.card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 1em auto;
+}
 
-  h1, h2 {
-    text-align: center;
-    margin: 0.5em 0;
-  }
+h1, h2 {
+  text-align: center;
+  margin: 0.5em 0;
+}
 
-  .info {
-    text-align: center;
-    color: #555;
-  }
+.info {
+  text-align: center;
+  color: #555;
+}
 
-  .section {
-    display: none;
-  }
+.section {
+  display: none;
+}
 
-  .section.active {
-    display: block;
-  }
+.section.active {
+  display: block;
+}
 
-  .section ul {
-    padding-left: 1.2em;
-  }
+.section ul {
+  padding-left: 1.2em;
+}
 
-  .contact-info {
-    font-size: 0.95em;
-  }
+.contact-info {
+  font-size: 0.95em;
+}
 
-  .contact-info p {
-    margin: 0.3em 0;
-  }
+.contact-info p {
+  margin: 0.3em 0;
+}
 
-  a {
-    color: #2b6cb0;
-    text-decoration: none;
-  }
+a {
+  color: #2b6cb0;
+  text-decoration: none;
+}
 
-  a:hover {
-    text-decoration: underline;
-  }
+a:hover {
+  text-decoration: underline;
+}
 
-  .perfil-flex {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2em;
-    align-items: flex-start;
-    margin-top: 1.5em;
-  }
+.perfil-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  align-items: flex-start;
+  margin-top: 1.5em;
+}
 
-  .perfil-img img {
-    width: 200px;
-    height: 200px;
-    border-radius: 16px;
-    object-fit: cover;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  }
+.perfil-img img {
+  width: 200px;
+  height: 200px;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
 
-  .perfil-info {
-    flex: 1;
-    min-width: 250px;
-  }
+.perfil-info {
+  flex: 1;
+  min-width: 250px;
+}
 
-  .perfil-info p {
-    text-align: justify;
-    margin-top: 1em;
-  }
+.perfil-info p {
+  text-align: justify;
+  margin-top: 1em;
+}
 
-  .contact-info i {
-    margin-right: 0.5em;
-    color: #cd171e;
-  }
+.contact-info i {
+  margin-right: 0.5em;
+  color: #cd171e;
+}
 
- @media (max-width: 768px) {
+/* --- Responsive: navegación móvil --- */
+@media (max-width: 768px) {
   .nav-bar-wrapper {
     flex-direction: column;
     align-items: center;
     gap: 1em;
+    padding: 1em 0;
   }
 
-  /* Logos arriba: hacemos que el contenedor flex principal muestre logos primero */
-  .nav-logo-wrapper.left {
-    order: 1;
-    align-self: flex-start; /* para que quede a la izquierda */
+  .nav-logos-mobile {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 4em;
+    padding: 0 1em;
   }
 
+  .nav-logo-wrapper.left,
   .nav-logo-wrapper.right {
-    order: 2;
-    align-self: flex-end; /* para que quede a la derecha */
+    position: static;
+    transform: none;
+    flex: none;
   }
 
-  /* Enlaces debajo, ocuparán toda la línea */
   .nav-container {
-    order: 3;
+    height: auto;
     width: 100%;
     justify-content: center;
   }
@@ -203,12 +217,15 @@
     align-items: center;
   }
 
-  .nav-links {
-    flex-direction: column;
-    gap: 1em;
-    align-items: center;
+  .nav-links-center a {
+    text-align: center;
+  }
+
+  .nav-links-center a:hover {
+    text-decoration: underline;
   }
 }
+
 
 </style>
 
@@ -219,31 +236,26 @@
 <body>
 
   
-<!-- Navegación -->
 <div class="nav-bar-wrapper">
 
-  <!-- Logo UNAM fuera del contenedor central -->
-  <div class="nav-logo-wrapper left">
-    <img src="logo_unam.png" class="nav-logo" alt="UNAM" />
-  </div>
-
-  <!-- Contenedor central solo con enlaces -->
-  <div class="nav-container">
-    <div class="nav-links-center">
-      <div class="nav-links">
-        <a onclick="showSection('inicio')">INICIO</a>
-        <a onclick="showSection('soluciones')">SOLUCIONES</a>
-        <a onclick="showSection('tecnologias')">TECNOL. APLICADAS</a>
-        <a onclick="showSection('publicaciones')">PUBLICACIONES</a>
-        <a onclick="showSection('news')">IN NEWS</a>
-        <a onclick="showSection('contacto')">CONTACTO</a>
-      </div>
+  <div class="nav-logos-mobile">
+    <div class="nav-logo-wrapper left">
+      <img src="logo_unam.png" class="nav-logo" alt="UNAM" />
+    </div>
+    <div class="nav-logo-wrapper right">
+      <img src="logo_ingenieria.png" class="nav-logo" alt="FI" />
     </div>
   </div>
 
-  <!-- Logo Ingeniería fuera del contenedor central -->
-  <div class="nav-logo-wrapper right">
-    <img src="logo_ingenieria.png" class="nav-logo" alt="FI" />
+  <div class="nav-container">
+    <div class="nav-links-center">
+      <a onclick="showSection('inicio')">INICIO</a>
+      <a onclick="showSection('soluciones')">SOLUCIONES</a>
+      <a onclick="showSection('tecnologias')">TECNOLOGÍAS APLICADAS</a>
+      <a onclick="showSection('publicaciones')">PUBLICACIONES</a>
+      <a onclick="showSection('news')">IN NEWS</a>
+      <a onclick="showSection('contacto')">CONTACTO</a>
+    </div>
   </div>
 
 </div>
