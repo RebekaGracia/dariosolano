@@ -13,32 +13,26 @@
     }
     
     nav {
-  background-color: #c9ccd0;
+  background-color: #b4daff;
   padding: 0.5em 1em;
-}
-
-.nav-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.nav-logo {
-  height: 50px;
-  object-fit: contain;
+  text-align: center;
 }
 
 .nav-links {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
-  flex-grow: 1;
+  flex-wrap: wrap;
   gap: 1em;
 }
 
+.nav-logo {
+  height: 40px;
+  object-fit: contain;
+}
+
 .nav-links a {
-  color: white;
+  color: #9f9f9f;
   text-decoration: none;
   font-weight: bold;
   cursor: pointer;
@@ -168,17 +162,17 @@
   <!-- Navegación -->
   
 <nav>
-  <div class="nav-content">
-    <img src="logo_unam.png" alt="Escudo UNAM" class="nav-logo">
-    <div class="nav-links">
-      <a onclick="showSection('inicio')">INICIO</a>
-      <a onclick="showSection('soluciones')">SOLUCIONES</a>
-      <a onclick="showSection('tecnologias')">TECNOLOGÍAS APLICADAS</a>
-      <a onclick="showSection('publicaciones')">PUBLICACIONES Y ARTÍCULOS</a>
-      <a onclick="showSection('news')">IN NEWS</a>
-      <a onclick="showSection('contacto')">CONTACTO</a>
-    </div>
-    <img src="logo_ingenieria.png" alt="Escudo FI" class="nav-logo">
+  <div class="nav-links">
+    <img src="logo_unam.png" alt="Escudo FI" class="nav-logo">
+    
+    <a onclick="showSection('inicio')">INICIO</a>
+    <a onclick="showSection('soluciones')">SOLUCIONES</a>
+    <a onclick="showSection('tecnologias')">TECNOLOGÍAS APLICADAS</a>
+    <a onclick="showSection('publicaciones')">PUBLICACIONES Y ARTÍCULOS</a>
+    <a onclick="showSection('news')">IN NEWS</a>
+    <a onclick="showSection('contacto')">CONTACTO</a>
+    
+    <img src="logo_ingenieria.png" alt="Escudo UNAM" class="nav-logo">
   </div>
 </nav>
 
