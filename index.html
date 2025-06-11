@@ -171,49 +171,45 @@
     color: #cd171e;
   }
 
-  /* --- Responsive: navegación móvil --- */
-  @media (max-width: 768px) {
-    .nav-container {
-      flex-direction: column;
-      height: auto;
-      padding: 1em 0;
-      gap: 1em;
-    }
-
-    .nav-logo-wrapper {
-      width: 100%;
-      justify-content: center;
-    }
-
-    .nav-links-center {
-      width: 100%;
-      justify-content: center;
-      order: 2;
-    }
-
-    .nav-links {
-      flex-direction: column;
-      gap: 1em;
-      align-items: center;
-    }
-
-    .nav-logo-wrapper.left {
-      order: 1;
-    }
-
-    .nav-logo-wrapper.right {
-      order: 3;
-    }
-
-    .perfil-flex {
-      flex-direction: column;
-      text-align: center;
-    }
-
-    .perfil-info p {
-      text-align: justify;
-    }
+ @media (max-width: 768px) {
+  .nav-bar-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
   }
+
+  /* Logos arriba: hacemos que el contenedor flex principal muestre logos primero */
+  .nav-logo-wrapper.left {
+    order: 1;
+    align-self: flex-start; /* para que quede a la izquierda */
+  }
+
+  .nav-logo-wrapper.right {
+    order: 2;
+    align-self: flex-end; /* para que quede a la derecha */
+  }
+
+  /* Enlaces debajo, ocuparán toda la línea */
+  .nav-container {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-links-center {
+    flex-direction: column;
+    gap: 1em;
+    width: 100%;
+    align-items: center;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+  }
+}
+
 </style>
 
 
