@@ -12,10 +12,16 @@
   background: #ffffff;
     }
     
-.nav-container {
+nav {
+  background-color: #b1d4f7;
+  padding: 0.5em 1em;
+  text-align: center;
+}
+
+.nav-links {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 1em;
 }
@@ -25,13 +31,17 @@
   object-fit: contain;
 }
 
-.nav-links {
-  display: flex;
-  gap: 1em;
-  flex-grow: 1;
-  justify-content: center;
-  flex-wrap: wrap;
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
 }
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
 
 
 .container {
