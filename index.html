@@ -14,47 +14,34 @@
     
 nav {
   background-color: #b1d4f7;
-  height: 50px; 
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* separa escudos y links */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 0 1em;
-  z-index: 1000;
+  padding: 0.5em 1em;
+  text-align: center;
 }
 
-/* Envoltorio de los enlaces */
 .nav-links {
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 1em;
-  height: 100%;
 }
 
-/* Escudos */
 .nav-logo {
-  height: 40px;  
+  height: 40px;
   object-fit: contain;
 }
 
-/* Estilos de los enlaces */
 .nav-links a {
-  color: #4f5050;
+  color: white;
   text-decoration: none;
   font-weight: bold;
-  padding: 0 0.4em;
-  line-height: 50px; 
-  font-size: 0.9em;
+  cursor: pointer;
 }
 
 .nav-links a:hover {
   text-decoration: underline;
 }
 
-/* Contenido principal */
 .container {
   margin-top: 60px; 
   position: relative;
