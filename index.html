@@ -21,13 +21,15 @@ nav {
 }
 
 .nav-container {
-  max-width: 800px; /* o el mismo ancho que tu .card o .container */
+  max-width: 1200px; /* aumentamos el ancho máximo */
   margin: 0 auto;
-  padding: 1em;
+  padding: 0 1em;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap; /* permite que los elementos bajen si no caben */
 }
+
 .nav-links-wrapper {
   display: flex;
   align-items: center;
@@ -47,10 +49,13 @@ nav {
 }
 
 .nav-logo {
-  height: 100%;
-  max-height: 70px;
+  height: auto;
+  max-height: 50px;
+  width: auto;
+  max-width: 120px; /* evita que se estiren demasiado */
   object-fit: contain;
 }
+
 .nav-links a {
   color: white;
   text-decoration: none;
@@ -61,7 +66,10 @@ nav {
 .nav-links a:hover {
   text-decoration: underline;
 }
-
+.nav-links a.active {
+  text-decoration: underline;
+  color: #003366;
+}
 
 
 .container {
@@ -435,14 +443,25 @@ Mi enfoque está orientado a dar respuesta efectiva a desafíos críticos en ent
   </div>
 
   <script>
-    function showSection(id) {
-      const sections = document.querySelectorAll('.section');
-      sections.forEach(section => {
-        section.classList.remove('active');
-      });
-      document.getElementById(id).classList.add('active');
-    }
-  </script>
+  function showSection(id) {
+    // Oculta todas las secciones
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(section => {
+      section.classList.remove('active');
+    });
+    // Muestra solo la sección seleccionada
+    document.getElementById(id).classList.add('active');
+
+    // Elimina la clase 'active' de todos los enlaces del menú
+    const links = document.querySelectorAll('.nav-links a');
+    links.forEach(link => link.classList.remove('active'));
+
+    // Encuentra el enlace que se ha hecho clic y agrégale la clase 'active'
+    const clickedLink = Array.from(links).find(link => link.getAttribute('onclick')?.includes(id));
+    if (clickedLink) clickedLink.classList.add('active');
+  }
+ </script>
+
 
 </body>
 </html>
