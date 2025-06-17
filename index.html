@@ -24,9 +24,22 @@ body {
   padding: 0.5em 0;
 }
 
-.nav-logos-mobile {
-  display: none; /* solo para móvil */
+
+/* Ya está bien este estilo: mantiene logos a los lados en escritorio */
+.nav-logo-wrapper.left {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
 }
+
+.nav-logo-wrapper.right {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 
 .nav-container {
   width: 100%;
@@ -181,7 +194,6 @@ a:hover {
   color: #cd171e;
 }
 
-/* --- Responsive: navegación móvil --- */
 @media (max-width: 768px) {
   .nav-bar-wrapper {
     flex-direction: column;
@@ -189,6 +201,31 @@ a:hover {
     gap: 1em;
     padding: 1em 0;
   }
+
+  .nav-container {
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    position: static;
+  }
+
+  .nav-links-center {
+    flex-direction: column;
+    gap: 1em;
+    width: 100%;
+    align-items: center;
+  }
+
+  .nav-logo-wrapper.left,
+  .nav-logo-wrapper.right {
+    position: static;
+    transform: none;
+    margin: 0.5em 0;
+  }
+}
+
 
   .nav-logos-mobile {
     display: flex;
@@ -238,17 +275,14 @@ a:hover {
 
   
 <div class="nav-bar-wrapper">
-
-  <div class="nav-logos-mobile">
+  <div class="nav-container">
+    
+    <!-- Logo UNAM a la izquierda -->
     <div class="nav-logo-wrapper left">
       <img src="logo_unam.png" class="nav-logo" alt="UNAM" />
     </div>
-    <div class="nav-logo-wrapper right">
-      <img src="logo_ingenieria.png" class="nav-logo" alt="FI" />
-    </div>
-  </div>
 
-  <div class="nav-container">
+    <!-- Enlaces de navegación al centro -->
     <div class="nav-links-center">
       <a onclick="showSection('inicio')">INICIO</a>
       <a onclick="showSection('soluciones')">SOLUCIONES</a>
@@ -257,8 +291,13 @@ a:hover {
       <a onclick="showSection('news')">IN NEWS</a>
       <a onclick="showSection('contacto')">CONTACTO</a>
     </div>
-  </div>
 
+    <!-- Logo FI a la derecha -->
+    <div class="nav-logo-wrapper right">
+      <img src="logo_ingenieria.png" class="nav-logo" alt="FI" />
+    </div>
+
+  </div>
 </div>
 
   
