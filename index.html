@@ -12,20 +12,30 @@ body {
   background: #ffffff;
 }
 
+/* Barra de navegación fija */
 .nav-bar-wrapper {
   background-color: #b1d4f7;
   position: sticky;
   top: 0;
   z-index: 999;
   display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: center;
   padding: 0.5em 0;
 }
 
+/* Contenedor de barra con logos y enlaces */
+.nav-container {
+  width: 100%;
+  max-width: 1200px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; /* ⬅️ Permite que todo se ajuste en pantallas pequeñas */
+  padding: 0 4em;
+}
 
-/* Ya está bien este estilo: mantiene logos a los lados en escritorio */
+/* Logotipos izquierdo y derecho */
 .nav-logo-wrapper.left {
   position: absolute;
   left: 20px;
@@ -40,24 +50,22 @@ body {
   transform: translateY(-50%);
 }
 
-
-.nav-container {
-  width: 100%;
-  height: 70px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.nav-logo {
+  max-height: 50px;
+  width: auto;
+  object-fit: contain;
+  display: block;
 }
 
+/* Enlaces de navegación */
 .nav-links-center {
-  max-width: 800px;
-  margin: 0 auto;
-  height: 100%;
   display: flex;
-  align-items: center;
+  flex-wrap: wrap; /* ⬅️ Mantiene horizontalidad adaptable */
   justify-content: center;
+  align-items: center;
   gap: 1em;
+  width: 100%;
+  padding: 0.5em 0;
 }
 
 .nav-links-center a {
@@ -65,7 +73,9 @@ body {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  font-size: 1em;
   cursor: pointer;
+  transition: color 0.2s;
 }
 
 .nav-links-center a:hover {
@@ -77,27 +87,7 @@ body {
   color: #003366;
 }
 
-.nav-logo {
-  max-height: 50px;
-  width: auto;
-  object-fit: contain;
-  display: block;
-}
-
-.nav-logo-wrapper.left {
-  position: absolute;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.nav-logo-wrapper.right {
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
+/* Contenido principal */
 .container {
   margin-top: 10px;
   position: relative;
@@ -154,6 +144,11 @@ h1, h2 {
   margin: 0.3em 0;
 }
 
+.contact-info i {
+  margin-right: 0.5em;
+  color: #cd171e;
+}
+
 a {
   color: #2b6cb0;
   text-decoration: none;
@@ -163,6 +158,7 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Perfil: imagen + texto */
 .perfil-flex {
   display: flex;
   flex-wrap: wrap;
@@ -189,49 +185,13 @@ a:hover {
   margin-top: 1em;
 }
 
-.contact-info i {
-  margin-right: 0.5em;
-  color: #cd171e;
-}
-
+/* RESPONSIVE: se conserva diseño horizontal del menú */
 @media (max-width: 768px) {
   .nav-bar-wrapper {
-    flex-direction: column;
-    align-items: center;
-    gap: 1em;
     padding: 1em 0;
   }
 
   .nav-container {
-    flex-direction: column;
-    height: auto;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    position: static;
-  }
-
-  .nav-links-center {
-    flex-direction: column;
-    gap: 1em;
-    width: 100%;
-    align-items: center;
-  }
-
-  .nav-logo-wrapper.left,
-  .nav-logo-wrapper.right {
-    position: static;
-    transform: none;
-    margin: 0.5em 0;
-  }
-}
-
-
-  .nav-logos-mobile {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    gap: 4em;
     padding: 0 1em;
   }
 
@@ -239,30 +199,31 @@ a:hover {
   .nav-logo-wrapper.right {
     position: static;
     transform: none;
+    margin: 0.5em 0;
     flex: none;
   }
 
-  .nav-container {
-    height: auto;
-    width: 100%;
-    justify-content: center;
-  }
-
   .nav-links-center {
-    flex-direction: column;
-    gap: 1em;
-    width: 100%;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8em;
   }
 
   .nav-links-center a {
-    text-align: center;
+    font-size: 0.95em;
   }
 
-  .nav-links-center a:hover {
-    text-decoration: underline;
+  .perfil-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .perfil-img img {
+    width: 150px;
+    height: 150px;
   }
 }
+
 
 
 </style>
@@ -277,12 +238,12 @@ a:hover {
 <div class="nav-bar-wrapper">
   <div class="nav-container">
     
-    <!-- Logo UNAM a la izquierda -->
+    <!-- Logo UNAM -->
     <div class="nav-logo-wrapper left">
       <img src="logo_unam.png" class="nav-logo" alt="UNAM" />
     </div>
 
-    <!-- Enlaces de navegación al centro -->
+    <!-- Enlaces de navegación -->
     <div class="nav-links-center">
       <a onclick="showSection('inicio')">INICIO</a>
       <a onclick="showSection('soluciones')">SOLUCIONES</a>
@@ -292,13 +253,14 @@ a:hover {
       <a onclick="showSection('contacto')">CONTACTO</a>
     </div>
 
-    <!-- Logo FI a la derecha -->
+    <!-- Logo FI -->
     <div class="nav-logo-wrapper right">
       <img src="logo_ingenieria.png" class="nav-logo" alt="FI" />
     </div>
 
   </div>
 </div>
+
 
   
   <div class="container">
