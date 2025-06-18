@@ -227,6 +227,7 @@ a:hover {
   .twitter-tweet {
     margin: auto;
   }
+
 .tech-block {
   display: flex;
   flex-wrap: wrap;
@@ -235,26 +236,42 @@ a:hover {
 }
 
 .tech-text {
-  flex: 1 1 40%; /* texto ocupa el 40% */
+  flex: 1 1 45%;
   padding: 10px;
-  min-width: 280px;
+  min-width: 300px;
 }
 
 .tech-image {
-  flex: 1 1 60%; /* imagen ocupa el 60% */
+  flex: 1 1 50%;
   padding: 10px;
-  min-width: 280px;
+  min-width: 300px;
   text-align: center;
 }
 
 .tech-image img {
-  width: 100%; /* usa todo el ancho disponible */
+  max-width: 100%;
+  width: 100%;
   height: auto;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
 
+/* 🔄 Evita que imagen sea gigante en pantallas grandes */
+@media (min-width: 768px) {
+  .tech-image img {
+    max-width: 500px;
+  }
+}
+
+/* 📱 Apila verticalmente en pantallas pequeñas */
+@media (max-width: 767px) {
+  .tech-block {
+    flex-direction: column;
+  }
+}
+
+   
 .tech-image img:hover {
   transform: scale(1.03);
 }
