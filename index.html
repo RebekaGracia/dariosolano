@@ -288,7 +288,7 @@ a:hover {
 
       <!-- Inicio -->
       
-<div id="inicio" class="section">
+<div id="inicio" class="section scroll-section">
   <h1>DARÍO E. SOLANO ROJAS</h1>
   <h2>INGENIERO GEÓLOGO ESPECIALIZADO EN MONITOREO DE INFRAESTRUCTURA Y GESTIÓN DEL RIESGO</h2>
 
@@ -335,7 +335,7 @@ a:hover {
 
       <!-- Soluciones -->
       
-      <div id="soluciones" class="section">
+    <div id="soluciones" class="section scroll-section">
         <h1>SOLUCIONES ESTRATÉGICAS</h1>
         <h1>INGENIERÍA APLICADA A LA PREVENCIÓN Y EL DIAGNÓSTICO</h1>
         <br>
@@ -357,7 +357,7 @@ Mi enfoque está orientado a dar respuesta efectiva a desafíos críticos en ent
 
       <!-- Tecnologías aplicadas -->
       
-      <div id="tecnologias" class="section">
+<div id="tecnologias" class="section scroll-section">
         <h1>TECNOLOGÍAS APLICADAS</h1>
         <br>
         <p>Para abordar los desafíos técnicos y territoriales de manera precisa y eficiente, aplico un conjunto de tecnologías avanzadas que permiten el diagnóstico, análisis y monitoreo detallado del comportamiento del terreno y de la infraestructura urbana. Estas herramientas me permiten generar información confiable y útil para la toma de decisiones en proyectos de ingeniería, gestión de riesgos y planificación territorial.</p>
@@ -668,67 +668,89 @@ Mi enfoque está orientado a dar respuesta efectiva a desafíos críticos en ent
   </div>
 
 
-  
 <script>
-document.querySelectorAll('.nav-links-center a').forEach(link => {
-  link.addEventListener('click', function (e) {
-    e.preventDefault();
-    const sectionId = this.getAttribute('onclick')?.match(/'(.+)'/)?.[1];
-    const target = document.getElementById(sectionId);
+  const navLinks = document.querySelectorAll('.nav-links-center a');
 
-    // Si es una sección que debe mostrarse manualmente
-    if (['innews', 'publicaciones', 'contacto'].includes(sectionId)) {
-      // Oculta todas las secciones manuales
-      ['innews', 'publicaciones', 'contacto'].forEach(id => {
-        const s = document.getElementById(id);
-        if (s) s.style.display = 'none';
-      });
+  // SECCIONES
+  const scrollSections = ['inicio', 'soluciones', 'tecnologias'];
+  const manualSections = ['innews', 'publicaciones', 'contacto'];
 
-      // Muestra solo la que se pidió
-      if (target) {
-        target.style.display = 'block';
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
-    } else {
-      // Para secciones de scroll libre
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  });
-});
+  function clearActiveLinks() {
+    navLinks.forEach(link => link.classList.remove('active'));
+  }
 
-// IntersectionObserver solo para las secciones libres
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const id = entry.target.id;
+  function hideManualSections() {
+    manualSections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.style.display = 'none';
+    });
+  }
 
-      document.querySelectorAll('.nav-links-center a').forEach(link => {
-        const linkId = link.getAttribute('onclick')?.match(/'(.+)'/)?.[1];
-        if (linkId === id) {
-          link.classList.add('active');
-        } else {
-          link.classList.remove('active');
+  function showScrollSections() {
+    scrollSections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.style.display = 'block';
+    });
+  }
+
+  function hideScrollSections() {
+    scrollSections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.style.display = 'none';
+    });
+  }
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const sectionId = link.getAttribute('onclick')?.match(/'(.+)'/)?.[1];
+      if (!sectionId) return;
+
+      clearActiveLinks();
+      link.classList.add('active');
+
+      if (scrollSections.includes(sectionId)) {
+        // Mostrar secciones con scroll
+        hideManualSections();
+        showScrollSections();
+        const target = document.getElementById(sectionId);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
         }
-      });
-    }
+      } else if (manualSections.includes(sectionId)) {
+        // Mostrar solo esa sección manual
+        hideManualSections();
+        hideScrollSections();
+        const target = document.getElementById(sectionId);
+        if (target) {
+          target.style.display = 'block';
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }
+    });
   });
-}, {
-  threshold: 0.6
-});
 
-// Solo observar secciones de scroll libre
-document.querySelectorAll('.section').forEach(section => {
-  section.style.display = 'block'; // Asegura que estén visibles
-  observer.observe(section);
-});
+  // OBSERVADOR para scroll-sections
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        clearActiveLinks();
+        const link = Array.from(navLinks).find(a => a.getAttribute('onclick')?.includes(id));
+        if (link) link.classList.add('active');
+      }
+    });
+  }, {
+    threshold: 0.5
+  });
 
-// Oculta secciones manuales al inicio
-['innews', 'publicaciones', 'contacto'].forEach(id => {
-  const s = document.getElementById(id);
-  if (s) s.style.display = 'none';
-});
+  document.querySelectorAll('.scroll-section').forEach(section => {
+    observer.observe(section);
+  });
+
+  // Al cargar la página, muestra solo scroll-sections
+  hideManualSections();
+  showScrollSections();
 </script>
 
 
