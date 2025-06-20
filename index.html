@@ -113,6 +113,8 @@ h1, h2 {
   padding-top: 80px; /* deja espacio por el sticky nav */
   scroll-margin-top: 80px; /* para anclaje con scroll */
   scroll-margin-top: 100px;
+  min-height: 100vh;
+  padding: 40px 20px;
 }
 
 
@@ -417,7 +419,7 @@ Mi enfoque está orientado a dar respuesta efectiva a desafíos críticos en ent
       </div>
 
       <!-- In News -->
-      <div id="innews">
+<div id="innews" class="section" style="display: none;">
         <h1>IN NEWS</h1>
 
   <!-- Contenido de tu sitio -->
@@ -538,7 +540,7 @@ Mi enfoque está orientado a dar respuesta efectiva a desafíos críticos en ent
       </div>
 
       <!-- Publicaciones -->
-      <div id="publicaciones">
+<div id="publicaciones" class="section" style="display: none;">
         <h1>PUBLICACIONES Y ARTÍCULOS</h1>
 <ul>
   
@@ -636,7 +638,7 @@ Mi enfoque está orientado a dar respuesta efectiva a desafíos críticos en ent
 
 
       <!-- Contacto -->
-<div id="contacto">
+<div id="contacto" class="section" style="display: none;">
   <h1>CONTACTO</h1>
   <p>
     <i class="fas fa-phone"></i> <strong>Tel:</strong> +52 777 18 58 731
@@ -671,33 +673,36 @@ Mi enfoque está orientado a dar respuesta efectiva a desafíos críticos en ent
 <script>
   const navLinks = document.querySelectorAll('.nav-links-center a');
 
-  // SECCIONES
   const scrollSections = ['inicio', 'soluciones', 'tecnologias'];
-  const manualSections = ['innews', 'publicaciones', 'contacto'];
+  const exclusiveSections = ['innews', 'publicaciones', 'contacto'];
 
   function clearActiveLinks() {
     navLinks.forEach(link => link.classList.remove('active'));
   }
 
-  function hideManualSections() {
-    manualSections.forEach(id => {
-      const el = document.getElementById(id);
-      if (el) el.style.display = 'none';
-    });
+  function showOnly(sectionId) {
+    // Oculta TODAS las secciones
+    document.querySelectorAll('.section').forEach(sec => sec.style.display = 'none');
+
+    // Muestra solo la sección solicitada
+    const target = document.getElementById(sectionId);
+    if (target) {
+      target.style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   }
 
-  function showScrollSections() {
-    scrollSections.forEach(id => {
-      const el = document.getElementById(id);
-      if (el) el.style.display = 'block';
+  function showScrollSectionsAndScrollTo(targetId) {
+    // Mostrar solo las secciones de scroll
+    document.querySelectorAll('.section').forEach(sec => {
+      const id = sec.id;
+      sec.style.display = scrollSections.includes(id) ? 'block' : 'none';
     });
-  }
 
-  function hideScrollSections() {
-    scrollSections.forEach(id => {
-      const el = document.getElementById(id);
-      if (el) el.style.display = 'none';
-    });
+    const target = document.getElementById(targetId);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 
   navLinks.forEach(link => {
@@ -710,48 +715,43 @@ Mi enfoque está orientado a dar respuesta efectiva a desafíos críticos en ent
       link.classList.add('active');
 
       if (scrollSections.includes(sectionId)) {
-        // Mostrar secciones con scroll
-        hideManualSections();
-        showScrollSections();
-        const target = document.getElementById(sectionId);
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
-      } else if (manualSections.includes(sectionId)) {
-        // Mostrar solo esa sección manual
-        hideManualSections();
-        hideScrollSections();
-        const target = document.getElementById(sectionId);
-        if (target) {
-          target.style.display = 'block';
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+        showScrollSectionsAndScrollTo(sectionId);
+      } else if (exclusiveSections.includes(sectionId)) {
+        showOnly(sectionId);
       }
     });
   });
 
-  // OBSERVADOR para scroll-sections
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.id;
-        clearActiveLinks();
-        const link = Array.from(navLinks).find(a => a.getAttribute('onclick')?.includes(id));
-        if (link) link.classList.add('active');
-      }
-    });
-  }, {
-    threshold: 0.5
-  });
+  // IntersectionObserver para actualizar el link activo al hacer scroll
+let currentActiveSection = null;
 
-  document.querySelectorAll('.scroll-section').forEach(section => {
-    observer.observe(section);
-  });
+const observer = new IntersectionObserver(entries => {
+  let visibleEntry = entries.find(entry => entry.isIntersecting);
+  if (visibleEntry) {
+    const id = visibleEntry.target.id;
 
-  // Al cargar la página, muestra solo scroll-sections
-  hideManualSections();
-  showScrollSections();
+    if (currentActiveSection !== id) {
+      currentActiveSection = id;
+      clearActiveLinks();
+      const link = Array.from(navLinks).find(a => a.getAttribute('onclick')?.includes(id));
+      if (link) link.classList.add('active');
+    }
+  }
+}, {
+  threshold: 0.6
+});
+
+
+  // Solo observa las secciones que se usan con scroll
+document.querySelectorAll('.scroll-section').forEach(section => {
+  observer.observe(section);
+});
+
+
+  // Al iniciar, muestra solo las secciones con scroll
+  showScrollSectionsAndScrollTo('inicio');
 </script>
+
 
 
 
