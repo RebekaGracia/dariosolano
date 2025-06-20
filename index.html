@@ -104,12 +104,11 @@ h1, h2 {
 }
 
 .section {
-  display: none;
+  padding-top: 80px; /* deja espacio por el sticky nav */
+  scroll-margin-top: 80px; /* para anclaje con scroll */
+  scroll-margin-top: 100px;
 }
 
-.section.active {
-  display: block;
-}
 
 .section ul {
   padding-left: 1.2em;
@@ -270,12 +269,12 @@ a:hover {
 
     <!-- Enlaces de navegación -->
     <div class="nav-links-center">
-      <a onclick="showSection('inicio')">INICIO</a>
-      <a onclick="showSection('soluciones')">SOLUCIONES</a>
-      <a onclick="showSection('tecnologias')">TECNOLOGÍAS APLICADAS</a>
-      <a onclick="showSection('news')">IN NEWS</a>
-      <a onclick="showSection('publicaciones')">PUBLICACIONES</a>
-      <a onclick="showSection('contacto')">CONTACTO</a>
+      <a href="showSection('inicio')">INICIO</a>
+      <a href="showSection('soluciones')">SOLUCIONES</a>
+      <a href="showSection('tecnologias')">TECNOLOGÍAS APLICADAS</a>
+      <a href"showSection('news')">IN NEWS</a>
+      <a href="showSection('publicaciones')">PUBLICACIONES</a>
+      <a href="showSection('contacto')">CONTACTO</a>
     </div>
 
 
@@ -669,25 +668,88 @@ Mi enfoque está orientado a dar respuesta efectiva a desafíos críticos en ent
     </div>
   </div>
 
-  <script>
-  function showSection(id) {
-    // Oculta todas las secciones
-    const sections = document.querySelectorAll('.section');
-    sections.forEach(section => {
-      section.classList.remove('active');
+<script>
+// Scroll suave al hacer clic
+document.querySelectorAll('.nav-links-center a').forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    const sectionId = this.getAttribute('onclick').replace("showSection('", "").replace("')", "");
+    const target = document.getElementById(sectionId);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+
+// Marcar enlace activo según la sección visible
+const sections = document.querySelectorAll('.section');
+const navLinks = document.querySelectorAll('.nav-links-center a');
+
+// Elimina "active" de todos los enlaces
+function clearActiveLinks() {
+  navLinks.forEach(link => link.classList.remove('active'));
+}
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.getAttribute('id');
+      clearActiveLinks();
+      navLinks.forEach(link => {
+        if (link.getAttribute('onclick')?.includes(id)) {
+          link.classList.add('active');
+        }
+      });
+    }
+  });
+}, {
+  threshold: 0.6  // Marca activa una sección cuando esté al 60% visible
+});
+
+sections.forEach(section => {
+  section.style.display = 'block';  // Asegura que todas estén visibles para scroll
+  observer.observe(section);
+});
+</script>
+
+  
+<script>
+  // Scroll suave al hacer clic
+  document.querySelectorAll('.nav-links-center a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      const target = document.getElementById(targetId);
+      if (target) {
+        window.scrollTo({
+          top: target.offsetTop - 80, // ajusta según la altura del nav
+          behavior: 'smooth'
+        });
+      }
     });
-    // Muestra solo la sección seleccionada
-    document.getElementById(id).classList.add('active');
+  });
 
-    // Elimina la clase 'active' de todos los enlaces del menú
-    const links = document.querySelectorAll('.nav-links a');
-    links.forEach(link => link.classList.remove('active'));
+  // Cambiar la clase 'active' del menú cuando se hace scroll
+  const sections = document.querySelectorAll('.section');
+  const navLinks = document.querySelectorAll('.nav-links-center a');
 
-    // Encuentra el enlace que se ha hecho clic y agrégale la clase 'active'
-    const clickedLink = Array.from(links).find(link => link.getAttribute('onclick')?.includes(id));
-    if (clickedLink) clickedLink.classList.add('active');
-  }
- </script>
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 100;
+      if (window.scrollY >= sectionTop) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
 
 
 </body>
