@@ -876,7 +876,7 @@ document.querySelectorAll('.scroll-section').forEach(section => {
 </footer>
 
 <script>
-    function mostrarSeccion(idSeccion) {
+  function mostrarSeccion(idSeccion) {
     // Ocultar todas las secciones
     document.querySelectorAll('.section').forEach(sec => {
       sec.style.display = 'none';
@@ -888,18 +888,21 @@ document.querySelectorAll('.scroll-section').forEach(section => {
       seccion.style.display = 'block';
     }
 
-    // Controlar visibilidad del footer
+    // Ocultar el footer si es la sección "contacto"
     const footer = document.getElementById('footer');
-    if (idSeccion === 'contacto') {
-      footer.style.display = 'none';  // Oculta footer en contacto
-    } else {
-      footer.style.display = 'block'; // Muestra footer en otras pestañas
+    if (footer) {
+      if (idSeccion === 'contacto') {
+        footer.style.display = 'none';
+      } else {
+        footer.style.display = 'block';
+      }
     }
-}
+  }
 
-// Ejemplo de llamada inicial (ajusta según tu lógica)
-mostrarSeccion('inicio'); // Mostrar sección inicio al cargar
+  // Mostrar la sección de inicio al cargar
+  mostrarSeccion('inicio');
 </script>
+
   
 </body>
 </html>
