@@ -262,11 +262,11 @@ a:hover {
   transform: scale(1.03);
 }
 
-   .footer {
-  background-color: #c9cbcd;
+.footer {
+  background-color: #e0f0ff;
   color: #000;
   text-align: center;
-  padding: 25px 10px;
+  padding: 30px 10px;
   width: 100%;
 }
 
@@ -274,14 +274,32 @@ a:hover {
   max-width: 800px;
   margin: 0 auto;
   font-family: 'Roboto', sans-serif;
-  font-size: 14px;
-  line-height: 1.8;
 }
 
 .footer-content h2 {
-  margin-bottom: 10px;
-  font-weight: 500;
+  margin-bottom: 20px;
   font-size: 20px;
+  font-weight: 500;
+}
+
+.footer-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.footer-left,
+.footer-right {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-left p,
+.footer-right p {
+  margin: 8px 0;
+  font-size: 14px;
 }
 
 .footer-content i {
@@ -297,7 +315,6 @@ a:hover {
 .footer-content a:hover {
   text-decoration: underline;
 }
-
 
 </style>
 
@@ -795,14 +812,21 @@ document.querySelectorAll('.scroll-section').forEach(section => {
 <footer class="footer">
   <div class="footer-content">
     <h2>Contacto</h2>
-    <p><i class="fas fa-phone"></i> Tel: +52 777 18 58 731</p>
-    <p><i class="fas fa-envelope"></i> <a href="mailto:dsolano@unam.mx">dsolano@unam.mx</a></p>
-    <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/darioesr/" target="_blank">LinkedIn</a></p>
-    <p><i class="fab fa-researchgate"></i> <a href="https://www.researchgate.net/profile/Dario-Solano-Rojas" target="_blank">ResearchGate</a></p>
-    <p><i class="fab fa-x-twitter"></i> <a href="https://x.com/Mr_InSAR" target="_blank">X (Twitter)</a></p>
-    <p><i class="fas fa-graduation-cap"></i> <a href="https://scholar.google.com/citations?user=qrffwRYAAAAJ&hl=es" target="_blank">Google Scholar</a></p>
+    <div class="footer-columns">
+      <div class="footer-left">
+        <p><i class="fas fa-phone"></i> Tel: +52 777 18 58 731</p>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:dsolano@unam.mx">dsolano@unam.mx</a></p>
+        <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/darioesr/" target="_blank">LinkedIn</a></p>
+      </div>
+      <div class="footer-right">
+        <p><i class="fab fa-researchgate"></i> <a href="https://www.researchgate.net/profile/Dario-Solano-Rojas" target="_blank">ResearchGate</a></p>
+        <p><i class="fab fa-x-twitter"></i> <a href="https://x.com/Mr_InSAR" target="_blank">X (Twitter)</a></p>
+        <p><i class="fas fa-graduation-cap"></i> <a href="https://scholar.google.com/citations?user=qrffwRYAAAAJ&hl=es" target="_blank">Google Scholar</a></p>
+      </div>
+    </div>
   </div>
 </footer>
+
 
 </body>
 </html>
