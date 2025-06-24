@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -260,20 +261,32 @@ a:hover {
 .tech-image img:hover {
   transform: scale(1.03);
 }
-.footer {
-  background-color: #e0f0ff; /* Color suave de fondo */
+
+   .footer {
+  background-color: #e0f0ff;
   color: #000;
   text-align: center;
-  padding: 20px 10px;
+  padding: 25px 10px;
   width: 100%;
-  margin-top: 40px; /* Espacio con respecto al contenido superior */
 }
 
 .footer-content {
   max-width: 800px;
   margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.8;
+}
+
+.footer-content h2 {
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.footer-content i {
+  margin-right: 8px;
+  color: #004080;
 }
 
 .footer-content a {
@@ -284,6 +297,7 @@ a:hover {
 .footer-content a:hover {
   text-decoration: underline;
 }
+
 
 </style>
 
@@ -780,9 +794,13 @@ document.querySelectorAll('.scroll-section').forEach(section => {
 <!-- Footer -->
 <footer class="footer">
   <div class="footer-content">
-    <p><strong>Contacto:</strong> Dr. Darío E. Solano Rojas</p>
-    <p>Email: <a href="mailto:correo@ejemplo.com">correo@ejemplo.com</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/usuario" target="_blank">linkedin.com/in/usuario</a></p>
+    <h2>Contacto</h2>
+    <p><i class="fas fa-phone"></i> Tel: +52 777 18 58 731</p>
+    <p><i class="fas fa-envelope"></i> <a href="mailto:dsolano@unam.mx">dsolano@unam.mx</a></p>
+    <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/darioesr/" target="_blank">LinkedIn</a></p>
+    <p><i class="fab fa-researchgate"></i> <a href="https://www.researchgate.net/profile/Dario-Solano-Rojas" target="_blank">ResearchGate</a></p>
+    <p><i class="fab fa-x-twitter"></i> <a href="https://x.com/Mr_InSAR" target="_blank">X (Twitter)</a></p>
+    <p><i class="fas fa-graduation-cap"></i> <a href="https://scholar.google.com/citations?user=qrffwRYAAAAJ&hl=es" target="_blank">Google Scholar</a></p>
   </div>
 </footer>
 
