@@ -319,6 +319,42 @@ a:hover {
 .footer-content a:hover {
   text-decoration: underline;
 }
+.contact-form {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.contact-form label {
+  font-weight: bold;
+  font-size: 16px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.contact-form input[type="email"] {
+  padding: 8px;
+  width: 250px;
+  max-width: 90%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.contact-form button {
+  padding: 8px 16px;
+  margin-left: 10px;
+  background-color: #004080;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #003366;
+}
+
 
 </style>
 
@@ -703,6 +739,8 @@ La integración de estos métodos permite no sólo monitorear con alta resoluci�
 
 
       <!-- Contacto -->
+
+      
 <div id="contacto" class="section" style="display: none;">
   <h1>CONTACTO</h1>
   <p>
@@ -819,7 +857,7 @@ document.querySelectorAll('.scroll-section').forEach(section => {
 
 
 <!-- Footer -->
-<footer class="footer">
+<footer id="footer" class="footer">
   <div class="footer-content">
     <h2>Contacto</h2>
     <div class="footer-columns">
@@ -837,6 +875,29 @@ document.querySelectorAll('.scroll-section').forEach(section => {
   </div>
 </footer>
 
+function mostrarSeccion(idSeccion) {
+  // Ocultar todas las secciones
+  document.querySelectorAll('.section').forEach(sec => {
+    sec.style.display = 'none';
+  });
+
+  // Mostrar la sección deseada
+  const seccion = document.getElementById(idSeccion);
+  if (seccion) {
+    seccion.style.display = 'block';
+  }
+
+  // Controlar visibilidad del footer
+  const footer = document.getElementById('footer');
+  if (idSeccion === 'contacto') {
+    footer.style.display = 'none';  // Oculta footer en contacto
+  } else {
+    footer.style.display = 'block'; // Muestra footer en otras pestañas
+  }
+}
+
+// Ejemplo de llamada inicial (ajusta según tu lógica)
+mostrarSeccion('inicio'); // Mostrar sección inicio al cargar
 
 </body>
 </html>
