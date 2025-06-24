@@ -851,27 +851,31 @@ La integración de estos métodos permite no sólo monitorear con alta resoluci�
   // Activación automática al hacer scroll (IntersectionObserver)
   let currentActiveSection = null;
 
-  const observer = new IntersectionObserver(entries => {
-    let visibleEntry = entries.find(entry => entry.isIntersecting);
-    if (visibleEntry) {
-      const id = visibleEntry.target.id;
+const observer = new IntersectionObserver(entries => {
+  // Ordenamos por porcentaje visible descendente
+  const visibleEntries = entries.filter(e => e.isIntersecting);
+  if (visibleEntries.length > 0) {
+    visibleEntries.sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+    const mostVisible = visibleEntries[0];
+    const id = mostVisible.target.id;
 
-      if (currentActiveSection !== id) {
-        currentActiveSection = id;
-        clearActiveLinks();
+    if (currentActiveSection !== id) {
+      currentActiveSection = id;
+      clearActiveLinks();
 
-        const link = Array.from(navLinks).find(a => {
-          const onclick = a.getAttribute('onclick');
-          return onclick && onclick.includes(`'${id}'`);
-        });
+      const link = Array.from(navLinks).find(a => {
+        const onclick = a.getAttribute('onclick');
+        return onclick && onclick.includes(`'${id}'`);
+      });
 
-        if (link) link.classList.add('active');
-      }
+      if (link) link.classList.add('active');
     }
-  }, {
-    threshold: 0.3,
-    rootMargin: '0px 0px -40% 0px'
-  });
+  }
+}, {
+  threshold: Array.from({length: 101}, (_, i) => i / 100), // umbrales de 0 a 1 en pasos finos
+  rootMargin: '0px 0px -40% 0px'
+});
+
 
   // Observar solo las secciones de scroll
   document.querySelectorAll('.scroll-section').forEach(section => {
