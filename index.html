@@ -25,33 +25,33 @@ body {
 
 /* Contenedor de barra con enlaces */
 .nav-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   max-width: 1200px;
-  width: 100%;
   margin: 0 auto;
-  padding: 0 1em;
+  position: relative; /* Para posicionar iconos */
+  display: flex;
+  justify-content: center; /* centra la sección central */
+  padding: 0 4em; /* espacio para los iconos a la derecha */
+  height: 50px;
+  align-items: center;
 }
 .nav-spacer-left {
   flex: 1;
 }
 /* Enlaces centrados */
 .nav-links-center {
-  flex: 2;
   display: flex;
+  gap: 1.2em;
+  white-space: nowrap;
+  max-width: 700px; /* Ajusta según necesites */
+  width: 100%;
   justify-content: center;
-  align-items: center;
-  gap: 0.6em;
-  flex-wrap: nowrap;
 }
 .nav-links-center a {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  font-size: 0.9em;
+  font-size: 1em;
   padding: 0 0.4em;
-  white-space: nowrap;
 }
 
 
@@ -65,12 +65,15 @@ body {
 }
 
 .nav-icons-right {
-  flex: 1;
+  position: absolute;
+  right: 1.5em;
   display: flex;
-  justify-content: flex-end;
+  gap: 1em;
   align-items: center;
-  gap: 0.5em;
+  top: 50%;
+  transform: translateY(-50%);
 }
+
 .nav-icons-right a i {
   font-size: 20px;
   color: white;
