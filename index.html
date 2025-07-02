@@ -20,43 +20,46 @@ body {
   position: sticky;
   top: 0;
   z-index: 999;
-  display: flex;
-  justify-content: center;
   padding: 0.5em 0;
 }
 
 /* Contenedor de barra con enlaces */
 .nav-container {
-  width: 100%;
-  max-width: 1200px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 2em;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.5em;
+  gap: 1em;
+  flex-wrap: nowrap; /* ⛔ evita que se rompa la fila */
+  overflow-x: auto;   /* ✅ opcional: scroll si no cabe todo */
 }
 .nav-spacer-left {
   flex: 1;
 }
 /* Enlaces centrados */
 .nav-links-center {
-  flex: 2;
+  flex-grow: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* ⛔ una sola fila */
   gap: 1em;
+  min-width: 0;       /* ✅ permite que se encoja */
+  overflow-x: auto;   /* ✅ opcional */
 }
-
-
 .nav-links-center a {
   white-space: nowrap;
   color: white;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1em;
-  cursor: pointer;
+  font-size: 0.95em;
+  padding: 0 0.5em;
   transition: color 0.2s;
 }
+
 
 .nav-links-center a:hover {
   text-decoration: underline;
@@ -68,11 +71,11 @@ body {
 }
 
 .nav-icons-right {
-  flex: 1;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   gap: 0.8em;
+  white-space: nowrap;
 }
 .nav-icons-right a i {
   font-size: 20px;
@@ -506,8 +509,6 @@ a:hover {
 
 <div class="nav-bar-wrapper">
   <div class="nav-container">
-    <!-- Espacio a la izquierda para centrar correctamente -->
-    <div class="nav-spacer-left"></div>
 
     <!-- Secciones centradas -->
     <div class="nav-links-center">
