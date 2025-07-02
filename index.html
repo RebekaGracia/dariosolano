@@ -271,6 +271,24 @@ a:hover {
     .articles.show {
       display: block;
     }
+   .year-header {
+  cursor: pointer;
+  font-weight: bold;
+  position: relative;
+  padding-right: 20px; /* espacio para el ícono */
+}
+
+.year-header::after {
+  content: "▼";
+  position: absolute;
+  right: 0;
+  transition: transform 0.3s ease;
+}
+
+.year-header.active::after {
+  transform: rotate(180deg); /* Apunta hacia arriba si está activo */
+}
+
 
 /* 🔄 Evita que imagen sea gigante en pantallas grandes */
 @media (min-width: 768px) {
@@ -476,23 +494,6 @@ a:hover {
   gap: 0.8em;
 }
 
-.year-header {
-  cursor: pointer;
-  font-weight: bold;
-  position: relative;
-  padding-right: 20px; /* espacio para el ícono */
-}
-
-.year-header::after {
-  content: "▼";
-  position: absolute;
-  right: 0;
-  transition: transform 0.3s ease;
-}
-
-.year-header.active::after {
-  transform: rotate(180deg); /* Apunta hacia arriba si está activo */
-}
 
 </style>
 
