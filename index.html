@@ -31,33 +31,27 @@ body {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 1.5em;
-  gap: 1em;
-  flex-wrap: nowrap; /* ⛔ evita que se rompa la fila */
-  overflow-x: auto;   /* ✅ opcional: scroll si no cabe todo */
+  padding: 0 1em;
 }
 .nav-spacer-left {
   flex: 1;
 }
 /* Enlaces centrados */
 .nav-links-center {
-  flex-grow: 1;
+  flex: 2;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: nowrap; /* ⛔ una sola fila */
-  gap: 1em;
-  min-width: 0;       /* ✅ permite que se encoja */
-  overflow-x: auto;   /* ✅ opcional */
+  gap: 0.6em;
+  flex-wrap: nowrap;
 }
 .nav-links-center a {
-  white-space: nowrap;
   color: white;
   text-decoration: none;
   font-weight: bold;
-  font-size: 0.95em;
-  padding: 0 0.5em;
-  transition: color 0.2s;
+  font-size: 0.9em;
+  padding: 0 0.4em;
+  white-space: nowrap;
 }
 
 
@@ -71,11 +65,11 @@ body {
 }
 
 .nav-icons-right {
+  flex: 1;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 0.8em;
-  white-space: nowrap;
+  gap: 0.5em;
 }
 .nav-icons-right a i {
   font-size: 20px;
