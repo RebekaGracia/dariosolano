@@ -316,30 +316,42 @@ a:hover {
   justify-content: space-between;
   gap: 40px;
   flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
   align-items: flex-start;
 }
-
-/* 📍 Parte izquierda dividida en 2 subcolumnas */
-.footer-left-group {
+.footer-left-columns {
   display: flex;
-  flex: 2;
   gap: 40px;
   flex-wrap: wrap;
+  justify-content: center;
+}
+/* 📍 Parte izquierda dividida en 2 subcolumnas */
+.footer-left-group {
+  flex: 2;
   min-width: 300px;
+  display: flex;
+  flex-direction: column;
 }
 
+.footer-group-title {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
 /* Cada columna dentro del grupo izquierdo */
 .footer-left {
   flex: 1;
   min-width: 180px;
-  text-align: left;
+  text-align: center;
 }
 
 /* Parte derecha (no dividida) */
 .footer-right {
   flex: 1;
   min-width: 220px;
-  text-align: left;
+  text-align: center;
 }
 
 .footer-left p,
@@ -347,10 +359,20 @@ a:hover {
   margin: 8px 0;
   font-size: 14px;
 }
+   .footer-right ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-right li {
+  margin: 8px 0;
+  font-size: 14px;
+}
 
 .footer-content i {
   margin-right: 8px;
-  color: #003366; /* Usar un color real en lugar de "#red" */
+  color: #003366;
 }
 
 .footer-content a {
@@ -1059,35 +1081,40 @@ En esta sección encontrarás algunas de las menciones y entrevistas en medios d
       <!-- Footer -->
 <footer id="footer" class="footer">
   <div class="footer-content">
-
     <div class="footer-columns">
+
+      <!-- Sección izquierda: CONTACTO -->
       <div class="footer-left-group">
-            <h2>Contacto</h2>
-        <div class="footer-left">
-          <p><i class="fas fa-phone"></i> Tel: +52 777 18 58 731</p>
-          <p><i class="fas fa-envelope"></i> <a href="mailto:dsolano@unam.mx">dsolano@unam.mx</a></p>
-          <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/darioesr/" target="_blank">LinkedIn</a></p>
-        </div>
-        <div class="footer-left">
-          <p><i class="fab fa-researchgate"></i> <a href="https://www.researchgate.net/profile/Dario-Solano-Rojas" target="_blank">ResearchGate</a></p>
-          <p><i class="fab fa-x-twitter"></i> <a href="https://x.com/Mr_InSAR" target="_blank">X (Twitter)</a></p>
-          <p><i class="fas fa-graduation-cap"></i> <a href="https://scholar.google.com/citations?user=qrffwRYAAAAJ&hl=es" target="_blank">Google Scholar</a></p>
+        <h2 class="footer-group-title">Contacto</h2>
+        <div class="footer-left-columns">
+          <div class="footer-left">
+            <p><i class="fas fa-phone"></i> Tel: +52 777 18 58 731</p>
+            <p><i class="fas fa-envelope"></i> <a href="mailto:dsolano@unam.mx">dsolano@unam.mx</a></p>
+            <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/darioesr/" target="_blank">LinkedIn</a></p>
+          </div>
+          <div class="footer-left">
+            <p><i class="fab fa-researchgate"></i> <a href="https://www.researchgate.net/profile/Dario-Solano-Rojas" target="_blank">ResearchGate</a></p>
+            <p><i class="fab fa-x-twitter"></i> <a href="https://x.com/Mr_InSAR" target="_blank">X (Twitter)</a></p>
+            <p><i class="fas fa-graduation-cap"></i> <a href="https://scholar.google.com/citations?user=qrffwRYAAAAJ&hl=es" target="_blank">Google Scholar</a></p>
+          </div>
         </div>
       </div>
 
+      <!-- Sección derecha: Sitios de interés -->
       <div class="footer-right">
-        <h2>Sitios de interés</h2>
+        <h2 class="footer-group-title">Sitios de interés</h2>
         <ul>
-        <li><a href="https://www.unam.mx/" target="_blank">UNAM</a></li>
-        <li><a href="https://www.ingenieria.unam.mx/" target="_blank">Facultad de Ingeniería, UNAM</a></li>
-        <li><a href="http://www.dict.unam.mx/" target="_blank">DICT - División de Ingeniería en Ciencias de la Tierra UNAM</a></li>
-        <li><a href="https://www.ingenieria.unam.mx/paginas/gaceta/" target="_blank">Gaceta Digital FI-UNAM</a></li>
+          <li><a href="https://www.unam.mx/" target="_blank">UNAM</a></li>
+          <li><a href="https://www.ingenieria.unam.mx/" target="_blank">Facultad de Ingeniería, UNAM</a></li>
+          <li><a href="http://www.dict.unam.mx/" target="_blank">DICT - División de Ingeniería en Ciencias de la Tierra UNAM</a></li>
+          <li><a href="https://www.ingenieria.unam.mx/paginas/gaceta/" target="_blank">Gaceta Digital FI-UNAM</a></li>
         </ul>
       </div>
 
     </div>
   </div>
 </footer>
+
 
 
 </body>
