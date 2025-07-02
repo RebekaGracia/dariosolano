@@ -835,9 +835,28 @@ La integración de estos métodos permite no sólo monitorear con alta resoluci�
 </div>
 
 
+
+
+    <!-- Footer -->
+<footer id="footer" class="footer">
+  <div class="footer-content">
+    <h2>Contacto</h2>
+    <div class="footer-columns">
+      <div class="footer-left">
+        <p><i class="fas fa-phone"></i> Tel: +52 777 18 58 731</p>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:dsolano@unam.mx">dsolano@unam.mx</a></p>
+        <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/darioesr/" target="_blank">LinkedIn</a></p>
+      </div>
+      <div class="footer-right">
+        <p><i class="fab fa-researchgate"></i> <a href="https://www.researchgate.net/profile/Dario-Solano-Rojas" target="_blank">ResearchGate</a></p>
+        <p><i class="fab fa-x-twitter"></i> <a href="https://x.com/Mr_InSAR" target="_blank">X (Twitter)</a></p>
+        <p><i class="fas fa-graduation-cap"></i> <a href="https://scholar.google.com/citations?user=qrffwRYAAAAJ&hl=es" target="_blank">Google Scholar</a></p>
+      </div>
     </div>
   </div>
+</footer>
 
+    
 <script>
   const navLinks = document.querySelectorAll('.nav-links-center a');
 
@@ -955,24 +974,7 @@ const observer = new IntersectionObserver(entries => {
 </script>
 
 
-<!-- Footer -->
-<footer id="footer" class="footer">
-  <div class="footer-content">
-    <h2>Contacto</h2>
-    <div class="footer-columns">
-      <div class="footer-left">
-        <p><i class="fas fa-phone"></i> Tel: +52 777 18 58 731</p>
-        <p><i class="fas fa-envelope"></i> <a href="mailto:dsolano@unam.mx">dsolano@unam.mx</a></p>
-        <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/darioesr/" target="_blank">LinkedIn</a></p>
-      </div>
-      <div class="footer-right">
-        <p><i class="fab fa-researchgate"></i> <a href="https://www.researchgate.net/profile/Dario-Solano-Rojas" target="_blank">ResearchGate</a></p>
-        <p><i class="fab fa-x-twitter"></i> <a href="https://x.com/Mr_InSAR" target="_blank">X (Twitter)</a></p>
-        <p><i class="fas fa-graduation-cap"></i> <a href="https://scholar.google.com/citations?user=qrffwRYAAAAJ&hl=es" target="_blank">Google Scholar</a></p>
-      </div>
-    </div>
-  </div>
-</footer>
+
 
 <script>
   function showSection(idSeccion) {
@@ -1002,7 +1004,11 @@ const observer = new IntersectionObserver(entries => {
   showSection('inicio');
 </script>
 
-
-  
+  <script>
+    function toggleArticles(id) {
+      const section = document.getElementById(id);
+      section.classList.toggle('show');
+    }
+  </script>  
 </body>
 </html>
