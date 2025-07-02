@@ -414,13 +414,13 @@ a:hover {
 <div class="nav-bar-wrapper">
   <div class="nav-container">
     <div class="nav-links-center">
-      <a href="javascript:void(0)" onclick="showSection(event, 'inicio')">INICIO</a>
-      <a href="javascript:void(0)" onclick="showSection(event, 'soluciones')">SOLUCIONES</a>
-      <a href="javascript:void(0)" onclick="showSection(event, 'tecnologias')">TECNOLOGÍAS APLICADAS</a>
-      <a href="javascript:void(0)" onclick="showSection(event, 'innews')">IN THE NEWS</a>
-      <a href="javascript:void(0)" onclick="showSection(event, 'publicaciones')">PUBLICACIONES</a>
-      <a href="javascript:void(0)" onclick="showSection(event, 'contacto')">CONTACTO</a>
-      <!-- Ícono LinkedIn al mismo nivel -->
+      <a href="#inicio" data-section="inicio">INICIO</a>
+      <a href="#soluciones" data-section="soluciones">SOLUCIONES</a>
+      <a href="#tecnologias" data-section="tecnologias">TECNOLOGÍAS APLICADAS</a>
+      <a href="#innews" data-section="innews">IN THE NEWS</a>
+      <a href="#publicaciones" data-section="publicaciones">PUBLICACIONES</a>
+      <a href="#contacto" data-section="contacto">CONTACTO</a>
+      <!-- Ícono LinkedIn igual -->
       <a href="https://www.linkedin.com/in/darioesr/" 
          target="_blank" 
          rel="noopener noreferrer" 
@@ -430,7 +430,6 @@ a:hover {
     </div>
   </div>
 </div>
-
 
   
   <div class="container">
@@ -879,10 +878,10 @@ En esta sección encontrarás algunas de las menciones y entrevistas en medios d
 
     
 <script>
-  const navLinks = document.querySelectorAll('.nav-links-center a');
-
   const scrollSections = ['inicio', 'soluciones', 'tecnologias'];
   const exclusiveSections = ['innews', 'publicaciones', 'contacto'];
+
+  const navLinks = document.querySelectorAll('.nav-links-center a[data-section]');
 
   function clearActiveLinks() {
     navLinks.forEach(link => link.classList.remove('active'));
@@ -936,11 +935,11 @@ En esta sección encontrarás algunas de las menciones y entrevistas en medios d
     }, 100);
   }
 
-  // Manejo de clics en navegación
+  // Manejo de clics en navegación interna
   navLinks.forEach(link => {
     link.addEventListener('click', e => {
       e.preventDefault();
-      const sectionId = link.getAttribute('onclick')?.match(/'(.+)'/)?.[1];
+      const sectionId = link.getAttribute('data-section');
       if (!sectionId) return;
 
       clearActiveLinks();
@@ -954,34 +953,28 @@ En esta sección encontrarás algunas de las menciones y entrevistas en medios d
     });
   });
 
-  // Activación automática al hacer scroll (IntersectionObserver)
+  // IntersectionObserver para activar el enlace según scroll
   let currentActiveSection = null;
 
-const observer = new IntersectionObserver(entries => {
-  // Ordenamos por porcentaje visible descendente
-  const visibleEntries = entries.filter(e => e.isIntersecting);
-  if (visibleEntries.length > 0) {
-    visibleEntries.sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-    const mostVisible = visibleEntries[0];
-    const id = mostVisible.target.id;
+  const observer = new IntersectionObserver(entries => {
+    const visibleEntries = entries.filter(e => e.isIntersecting);
+    if (visibleEntries.length > 0) {
+      visibleEntries.sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+      const mostVisible = visibleEntries[0];
+      const id = mostVisible.target.id;
 
-    if (currentActiveSection !== id) {
-      currentActiveSection = id;
-      clearActiveLinks();
+      if (currentActiveSection !== id) {
+        currentActiveSection = id;
+        clearActiveLinks();
 
-      const link = Array.from(navLinks).find(a => {
-        const onclick = a.getAttribute('onclick');
-        return onclick && onclick.includes(`'${id}'`);
-      });
-
-      if (link) link.classList.add('active');
+        const link = Array.from(navLinks).find(a => a.getAttribute('data-section') === id);
+        if (link) link.classList.add('active');
+      }
     }
-  }
-}, {
-  threshold: Array.from({length: 101}, (_, i) => i / 100), // umbrales de 0 a 1 en pasos finos
-  rootMargin: '0px 0px -40% 0px'
-});
-
+  }, {
+    threshold: Array.from({ length: 101 }, (_, i) => i / 100),
+    rootMargin: '0px 0px -40% 0px'
+  });
 
   // Observar solo las secciones de scroll
   document.querySelectorAll('.scroll-section').forEach(section => {
@@ -993,6 +986,7 @@ const observer = new IntersectionObserver(entries => {
     showScrollSectionsAndScrollTo('inicio');
   });
 </script>
+
 
 
 
