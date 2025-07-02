@@ -30,23 +30,21 @@ body {
   width: 100%;
   max-width: 1200px;
   display: flex;
-  justify-content: space-between; /* ⬅️ Distribuye centro + derecha */
   align-items: center;
-  flex-wrap: wrap;
-  padding: 0 4em;
+  justify-content: space-between;
+  padding: 0 2em;
 }
-
+.nav-spacer-left {
+  flex: 1;
+}
 /* Enlaces centrados */
 .nav-links-center {
+  flex: 2;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 1em;
-  padding: 0.5em 0;
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: 0;
 }
 
 
@@ -68,17 +66,19 @@ body {
   text-decoration: underline;
   color: #003366;
 }
+
 .nav-icons-right {
+  flex: 1;
   display: flex;
+  justify-content: flex-end;
+  align-items: center;
   gap: 0.8em;
 }
-
 .nav-icons-right a i {
   font-size: 20px;
   color: white;
   transition: color 0.2s;
 }
-
 .nav-icons-right a:hover i {
   color: #003366;
 }
@@ -506,6 +506,9 @@ a:hover {
 
 <div class="nav-bar-wrapper">
   <div class="nav-container">
+    <!-- Espacio a la izquierda para centrar correctamente -->
+    <div class="nav-spacer-left"></div>
+
     <!-- Secciones centradas -->
     <div class="nav-links-center">
       <a href="#inicio" data-section="inicio">INICIO</a>
@@ -515,7 +518,7 @@ a:hover {
       <a href="#publicaciones" data-section="publicaciones">PUBLICACIONES</a>
       <a href="#contacto" data-section="contacto">CONTACTO</a>
     </div>
-  </div>
+
     <!-- Íconos alineados a la derecha -->
     <div class="nav-icons-right">
       <a href="https://www.linkedin.com/in/darioesr/" target="_blank" rel="noopener noreferrer">
@@ -533,7 +536,7 @@ a:hover {
       <a href="https://x.com/Mr_InSAR" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-x-twitter"></i>
       </a>
-  
+    </div>
   </div>
 </div>
 
