@@ -25,33 +25,25 @@ body {
   padding: 0.5em 0;
 }
 
-/* Contenedor de barra con logos y enlaces */
+/* Contenedor de barra con enlaces */
 .nav-container {
   width: 100%;
   max-width: 1200px;
-  position: relative;
   display: flex;
+  justify-content: space-between; /* ⬅️ Distribuye centro + derecha */
   align-items: center;
-  justify-content: center;
-  flex-wrap: wrap; /* ⬅️ Permite que todo se ajuste en pantallas pequeñas */
+  flex-wrap: wrap;
   padding: 0 4em;
 }
 
-.nav-links-center a.active {
-  font-weight: bold;
-  color: #064d8a;
-  text-decoration: underline;
-}
-
-
-/* Enlaces de navegación */
+/* Enlaces centrados */
 .nav-links-center {
   display: flex;
-  flex-wrap: wrap; /* ⬅️ Mantiene horizontalidad adaptable */
   justify-content: center;
   align-items: center;
+  flex: 1; /* ocupa el espacio disponible */
+  flex-wrap: wrap;
   gap: 1em;
-  width: 100%;
   padding: 0.5em 0;
 }
 
@@ -73,7 +65,20 @@ body {
   text-decoration: underline;
   color: #003366;
 }
+.nav-icons-right {
+  display: flex;
+  gap: 0.8em;
+}
 
+.nav-icons-right a i {
+  font-size: 20px;
+  color: white;
+  transition: color 0.2s;
+}
+
+.nav-icons-right a:hover i {
+  color: #003366;
+}
 /* Contenido principal */
 .container {
   margin-top: 10px;
@@ -428,6 +433,7 @@ a:hover {
 
 <div class="nav-bar-wrapper">
   <div class="nav-container">
+    <!-- Secciones centradas -->
     <div class="nav-links-center">
       <a href="#inicio" data-section="inicio">INICIO</a>
       <a href="#soluciones" data-section="soluciones">SOLUCIONES</a>
@@ -435,35 +441,29 @@ a:hover {
       <a href="#innews" data-section="innews">IN THE NEWS</a>
       <a href="#publicaciones" data-section="publicaciones">PUBLICACIONES</a>
       <a href="#contacto" data-section="contacto">CONTACTO</a>
-      <a href="https://www.linkedin.com/in/darioesr/" 
-         target="_blank" 
-         rel="noopener noreferrer" 
-         class="icon-link">
+    </div>
+
+    <!-- Íconos alineados a la derecha -->
+    <div class="nav-icons-right">
+      <a href="https://www.linkedin.com/in/darioesr/" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-linkedin"></i>
       </a>
-      <a href="mailto:dsolano@unam.mx" 
-         target="_blank" 
-         rel="noopener noreferrer" 
-         class="icon-link">
-         <i class="fas fa-envelope"></i>
+      <a href="mailto:dsolano@unam.mx" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-envelope"></i>
       </a>
-        <a href="https://www.researchgate.net/profile/Dario-Solano-Rojas" 
-         target="_blank" 
-         rel="noopener noreferrer" 
-         class="icon-link">
+      <a href="https://www.researchgate.net/profile/Dario-Solano-Rojas" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-researchgate"></i>
       </a>
-      </a>
-        <a href="https://scholar.google.com/citations?user=qrffwRYAAAAJ&hl=es" 
-         target="_blank" 
-         rel="noopener noreferrer" 
-         class="icon-link">
+      <a href="https://scholar.google.com/citations?user=qrffwRYAAAAJ&hl=es" target="_blank" rel="noopener noreferrer">
         <i class="fas fa-graduation-cap"></i>
       </a>
-
+      <a href="https://x.com/Mr_InSAR" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-x-twitter"></i>
+      </a>
     </div>
   </div>
 </div>
+
 
   
   <div class="container">
