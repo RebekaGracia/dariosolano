@@ -476,6 +476,23 @@ a:hover {
   gap: 0.8em;
 }
 
+.year-header {
+  cursor: pointer;
+  font-weight: bold;
+  position: relative;
+  padding-right: 20px; /* espacio para el ícono */
+}
+
+.year-header::after {
+  content: "▼";
+  position: absolute;
+  right: 0;
+  transition: transform 0.3s ease;
+}
+
+.year-header.active::after {
+  transform: rotate(180deg); /* Apunta hacia arriba si está activo */
+}
 
 </style>
 
@@ -1103,12 +1120,19 @@ En esta sección encontrarás algunas de las menciones y entrevistas en medios d
 
 </script>
 
-  <script>
-    function toggleArticles(id) {
-      const section = document.getElementById(id);
-      section.classList.toggle('show');
+<script>
+  function toggleArticles(id, headerElement) {
+    const section = document.getElementById(id);
+    const isVisible = section.style.display === "block";
+    section.style.display = isVisible ? "none" : "block";
+
+    // Alternar clase 'active' en el encabezado
+    if (headerElement) {
+      headerElement.classList.toggle("active", !isVisible);
     }
-  </script>  
+  }
+</script>
+
 
       <!-- Footer -->
 <footer id="footer" class="footer">
