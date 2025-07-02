@@ -284,19 +284,17 @@ a:hover {
 }
 
 .footer {
-  background-color: #c9cbcd;     /* Igual que tu barra de navegación */
+  background-color: #c9cbcd; /* Igual que tu barra de navegación */
   color: #000;
-  text-align: center;
   padding: 1.5em 1em;
   width: 100%;
   display: block;
   margin-top: auto;
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* borde superior sutil */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
 
-
 .footer-content {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   font-family: 'Roboto', sans-serif;
 }
@@ -305,22 +303,38 @@ a:hover {
   margin-bottom: 20px;
   font-size: 20px;
   font-weight: 500;
+  text-align: center;
 }
 
 .footer-columns {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   gap: 40px;
-  max-width: 600px;
-  margin: 0 auto;
   flex-wrap: wrap;
+  align-items: flex-start;
 }
 
-.footer-left,
+/* 📍 Parte izquierda dividida en 2 subcolumnas */
+.footer-left-group {
+  display: flex;
+  flex: 2;
+  gap: 40px;
+  flex-wrap: wrap;
+  min-width: 300px;
+}
+
+/* Cada columna dentro del grupo izquierdo */
+.footer-left {
+  flex: 1;
+  min-width: 180px;
+  text-align: left;
+}
+
+/* Parte derecha (no dividida) */
 .footer-right {
   flex: 1;
-  min-width: 200px;
-  text-align: center;  /* CENTRA el texto dentro de cada columna */
+  min-width: 220px;
+  text-align: left;
 }
 
 .footer-left p,
@@ -331,7 +345,7 @@ a:hover {
 
 .footer-content i {
   margin-right: 8px;
-  color: #red;
+  color: #003366; /* Usar un color real en lugar de "#red" */
 }
 
 .footer-content a {
@@ -342,6 +356,7 @@ a:hover {
 .footer-content a:hover {
   text-decoration: underline;
 }
+
 .contact-form {
   margin-top: 20px;
   text-align: center;
@@ -1046,19 +1061,33 @@ En esta sección encontrarás algunas de las menciones y entrevistas en medios d
   <div class="footer-content">
     <h2>Contacto</h2>
     <div class="footer-columns">
-      <div class="footer-left">
-        <p><i class="fas fa-phone"></i> Tel: +52 777 18 58 731</p>
-        <p><i class="fas fa-envelope"></i> <a href="mailto:dsolano@unam.mx">dsolano@unam.mx</a></p>
-        <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/darioesr/" target="_blank">LinkedIn</a></p>
+
+      <div class="footer-left-group">
+        <div class="footer-left">
+          <p><i class="fas fa-phone"></i> Tel: +52 777 18 58 731</p>
+          <p><i class="fas fa-envelope"></i> <a href="mailto:dsolano@unam.mx">dsolano@unam.mx</a></p>
+          <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/darioesr/" target="_blank">LinkedIn</a></p>
+        </div>
+        <div class="footer-left">
+          <p><i class="fab fa-researchgate"></i> <a href="https://www.researchgate.net/profile/Dario-Solano-Rojas" target="_blank">ResearchGate</a></p>
+          <p><i class="fab fa-x-twitter"></i> <a href="https://x.com/Mr_InSAR" target="_blank">X (Twitter)</a></p>
+          <p><i class="fas fa-graduation-cap"></i> <a href="https://scholar.google.com/citations?user=qrffwRYAAAAJ&hl=es" target="_blank">Google Scholar</a></p>
+        </div>
       </div>
+
       <div class="footer-right">
-        <p><i class="fab fa-researchgate"></i> <a href="https://www.researchgate.net/profile/Dario-Solano-Rojas" target="_blank">ResearchGate</a></p>
-        <p><i class="fab fa-x-twitter"></i> <a href="https://x.com/Mr_InSAR" target="_blank">X (Twitter)</a></p>
-        <p><i class="fas fa-graduation-cap"></i> <a href="https://scholar.google.com/citations?user=qrffwRYAAAAJ&hl=es" target="_blank">Google Scholar</a></p>
+        <p><strong>Sitios de interés:</strong></p>
+        <p><a href="https://www.unam.mx/" target="_blank">UNAM</a></p>
+        <p><a href="https://www.ingenieria.unam.mx/" target="_blank">Facultad de Ingeniería, UNAM</a></p>
+        <p><a href="http://www.dict.unam.mx/" target="_blank">DICT - División de Ingeniería en Ciencias de la Tierra UNAM</a></p>
+        <p><a href="https://www.ingenieria.unam.mx/paginas/gaceta/" target="_blank">Gaceta Digital FI-UNAM</a></p>
+        <p><a href="#contacto" data-section="contacto">Escríbeme aquí</a></p>
       </div>
+
     </div>
   </div>
 </footer>
+
 
 </body>
 </html>
