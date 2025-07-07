@@ -512,6 +512,38 @@ a:hover {
   gap: 0.8em;
 }
 
+.news-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5em;
+  margin-top: 2em;
+}
+
+.news-columns ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.news-columns li {
+  background: #fff;
+  padding: 1em;
+  border-radius: 0.8em;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin-bottom: 1em;
+  transition: transform 0.2s ease;
+}
+
+.news-columns li:hover {
+  transform: translateY(-4px);
+  background-color: #f9f9f9;
+}
+
+.news-columns a {
+  text-decoration: none;
+  color: #0056b3;
+  font-weight: bold;
+}
 
 </style>
 
@@ -698,7 +730,6 @@ La integración de estos métodos permite no sólo monitorear con alta resoluci�
     
       </div>
 
-      actualmente este asi
 
 
 
@@ -720,7 +751,7 @@ En esta sección encontrarás algunas de las menciones y entrevistas en medios d
     <a href="https://twitter.com/Milenio/status/1903588236158448046?ref_src=twsrc%5Etfw">March 22, 2025</a>
   </blockquote> 
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
+<div class="news-columns">
 <ul>
     <li><strong><em>Microsismos en la CDMX: lo que revela la UNAM sobre su origen</em></strong>  
     <br>
@@ -736,25 +767,7 @@ En esta sección encontrarás algunas de las menciones y entrevistas en medios d
     <br>
       👉 <a href="http://wired.com/story/mexico-city-could-sink-up-to-65-feet/" target="_blank">WIRED</a>
     </li>
-</ul>
-
-    <!-- Incrustación  video YT GRUPO FORMULA -->
-  <h2>▶️ Alertan por tramos elevados de la Línea 9 del Metro de la CDMX</h2>
- <div style="text-align:center;">
-  <iframe 
-    width="560" 
-    height="315" 
-    src="https://www.youtube.com/embed/AfqrXd3k3YA?si=Cq14zxBDBjer2nxp" 
-    title="YouTube video player" 
-    frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-    referrerpolicy="strict-origin-when-cross-origin" 
-    allowfullscreen>
-  </iframe>
-</div>
-
-<ul>
-  
+    <br>
     <li><strong><em>Study identifies areas in Mexico City Metro affected by land subsidence</em></strong>  
     <br>
       👉 <a href="https://news.fiu.edu/2024/satellite-data-points-to-vulnerabilities-in-mexico-citys-metro-system-scientists-offer-solutions" target="_blank">FIU News</a>
@@ -821,6 +834,22 @@ En esta sección encontrarás algunas de las menciones y entrevistas en medios d
     </li>
 
 </ul>
+  </div>
+
+    <!-- Incrustación  video YT GRUPO FORMULA -->
+  <h2>▶️ Alertan por tramos elevados de la Línea 9 del Metro de la CDMX</h2>
+ <div style="text-align:center;">
+  <iframe 
+    width="560" 
+    height="315" 
+    src="https://www.youtube.com/embed/AfqrXd3k3YA?si=Cq14zxBDBjer2nxp" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" 
+    allowfullscreen>
+  </iframe>
+</div>
       </div>
 
       <!-- Publicaciones -->
