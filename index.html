@@ -544,6 +544,46 @@ a:hover {
   color: #0056b3;
   font-weight: bold;
 }
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5em;
+  margin-top: 2em;
+}
+
+.news-card {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.news-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.news-card h3 {
+  font-size: 1em;
+  padding: 1em;
+  margin: 0;
+  color: #003366;
+  text-align: justify;
+}
+
+.news-card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
 
 </style>
 
@@ -751,7 +791,7 @@ En esta sección encontrarás algunas de las menciones y entrevistas en medios d
     <a href="https://twitter.com/Milenio/status/1903588236158448046?ref_src=twsrc%5Etfw">March 22, 2025</a>
   </blockquote> 
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-<div class="news-columns">
+<div class="news-grid">
 <div class="news-card">
   <a href="https://elpais.com/mexico/2025-03-27/el-primer-gran-estudio-sobre-los-microsismos-en-ciudad-de-mexico-revela-que-dos-fallas-provocan-los-temblores-en-el-poniente.html" target="_blank">
     <img src="ElPrimerGranEstudio.png" alt="El primer gran estudio sobre los microsismos en Ciudad de México">
